@@ -1,0 +1,15 @@
+.ItemCount{
+     width: 300px;
+}
+
+.ItemCountButton {
+    font-size: 30px;
+    color:lightpink (40, 40, 114);
+    cursor: pointer;
+
+}
+
+.ItemCountAmount {
+    flex: 1px;
+    font-weight: bold;
+}
