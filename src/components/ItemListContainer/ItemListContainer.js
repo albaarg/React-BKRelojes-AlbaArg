@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListContainer = ({stockT, onAdd}) => {
+const ItemListContainer = (prop) => {
+  const {stockT, onAdd} = prop
  
     const [stockTotal, setStockTotal] = useState(stockT);
     const [stockUsser, setStockUsser] = useState(0);
     const [botonActivo, setBotonActivo] = useState(true);
     const [activo,setActivo]=useState(false)
     const count = stockUsser;
-
-    
+ 
     useEffect(() => {
         setStockTotal(stockT);
  
@@ -41,7 +41,7 @@ const ItemListContainer = ({stockT, onAdd}) => {
     }
     
     return (
-        
+
         <ItemCount  stockUsser={stockUsser} stockTotal={stockTotal} sumar={sumar} restar={restar} botonActivo={botonActivo} activo={activo} onAdd={onAdd} count={count}/>
 
  

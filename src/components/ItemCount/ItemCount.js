@@ -1,8 +1,10 @@
 import React from 'react';
 import './ItemCount.css'
 
-const ItemCount = ({stockUsser,stockTotal,sumar,restar,botonActivo,activo, onAdd, count}) => {
-    
+
+const ItemCount = (prop) => {
+    const {stockUsser,stockTotal,sumar,restar,botonActivo,activo, onAdd, count}= prop
+     
     return (
         <div>
             <p className="cantidad">cantidad en Stock: {stockTotal}</p>
