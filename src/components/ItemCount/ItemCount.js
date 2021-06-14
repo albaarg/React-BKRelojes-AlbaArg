@@ -16,12 +16,27 @@ const ItemCount = (prop) => {
             <button onClick={()=> onAdd(count)} disabled={!activo} className="btn shop" >Comprar</button>
         </div>
 
+    
+const sumar = () => {
+    if ((stockTotal > 0)&& (stockUsser < stockTotal) ){
+        setStockUsser (stockUsser +1);
+        setAactivo (true)
 
+    }
+}
+const restar =() =>{
+    if (stockUsser ===0){
+    setAactivo(false)
+    setStockUsser(0);
 
-
-     )
-
+    }
+    else if(stockUsser >=8 ){
+    setStockUsser (stockUsser -1);
+    }
+}
 
 }
+
+
 
 export default ItemCount;
