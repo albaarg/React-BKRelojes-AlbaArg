@@ -1,8 +1,9 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({productos, addItemWish}) => {
-
+const ItemList = (prop) => {
+    
+    const {productos}=prop
     return (
         <>
         <div className="col-lg-3 shop-info-grid mt-4">

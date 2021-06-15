@@ -2,7 +2,11 @@ import React from 'react';
 import './Item.css'
 // Muestra todo el detalle de los productos
 
-const Item = ({id, img, title, descripcion, precio}) => {
+const Item = (prop) => {
+    const { img, title, description, precio,} = prop
+
+
+
       
       return (
         <div className="producto-info">
@@ -19,9 +23,7 @@ const Item = ({id, img, title, descripcion, precio}) => {
                     <span className="money">${precio}</span>
                 </div>
             </div>
-            <div>
-                <Link to={`/item/${id}`}><button className="btn shop">Ver Info</button></Link>
-            </div>
+            
         </div>
        
     </div>
