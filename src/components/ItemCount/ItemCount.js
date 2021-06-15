@@ -4,9 +4,9 @@ import './ItemCount.css'
 
 const ItemCount = (prop) => {
 
-    const {setStockUsser,stockUsser,stockTotal,botonActivo,activo,setAactivo, onAdd,count}= prop
+    const {setStockUsser,stockUsser, stockTotal, botonActivo,activo,setAactivo, onAdd,count}= prop
 
-    const suma = () => {
+    const sumar = () => {
         if ((stockTotal > 0)&& (stockUsser < stockTotal) ){
             setStockUsser (stockUsser +1);
             setAactivo (true);
@@ -14,7 +14,7 @@ const ItemCount = (prop) => {
         }
     
     }
-    const resta =() =>{
+    const restar =() =>{
         if (stockUsser ===0){
         setAactivo(false);
         setStockUsser(0);

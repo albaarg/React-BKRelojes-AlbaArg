@@ -3,18 +3,22 @@ import '../NavBar/NavBar';
 import CartWidget from '../CartWidget/CartWidget';
 
 
-function NavBar () {
-      return ( <nav style={{borderBottom:'solid 2px white'}}>
-            <h1> Candle Shop </h1>
-            <ul>
-                <li><p>Home</p></li>
-                <li><p>Productos</p></li>
-                <li><p>Contacto</p></li>
+const NavBar = () => {
+      return  ( 
+          <div className='d-flex align-items-center justify-content-between p-2 bg-light'> 
+
+             <h1> BK Relojes</h1>
+
+             <ul className='d-flex align-item-center' style={{listStyle:'none'}}>
+
+                <li className='m-2'>Home</li>
+                <li className='m-2'>Productos</li>
+                <li className='m-2'>Contacto</li>
             </ul>
 
             <CartWidget/>
-
-        </nav>
+          </div>
+        
 
       )   
 }
