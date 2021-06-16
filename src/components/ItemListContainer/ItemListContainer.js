@@ -5,6 +5,19 @@ import ItemList from '../ItemList/ItemList';
 
    const ItemListContainer = (prop) => {
 
+    const [item] = useState([])
+
+    useEffect(() => {
+      setStockTotal(stockT);
+  
+       if(stockTotal === 0){
+       setBotonActivo(false);
+       if(stockUsser > 0){
+        setBotonActivo(true);
+      }
+    }
+   } , [stockTotal,stockUsser,stockT])
+
     const {productos}=prop [{ 
 
     nombre: 'Producto 1', cantidad: 1
@@ -14,8 +27,7 @@ import ItemList from '../ItemList/ItemList';
     nombre: 'Producto 3', cantidad: 5
     }]
     
-
-    const getProducts = new Promise((resolve) => {
+   const getProducts = new Promise((resolve) => {
 
       setTimeout(() => {
         resolve(productos);
@@ -27,6 +39,7 @@ import ItemList from '../ItemList/ItemList';
       .then(data => {
         data.forEach(productos => {
           console.log(productos);
+       
         });
       })
       .catch(e => {
@@ -43,18 +56,7 @@ import ItemList from '../ItemList/ItemList';
   const [activo,setActivo]=useState(false)
   const count = stockUsser;
   
-  useEffect(() => {
-    setStockTotal(stockT);
-
-     if(stockTotal === 0){
-     setBotonActivo(false);
-     if(stockUsser > 0){
-      setBotonActivo(true);
-    }
-  }
- } , [stockTotal,stockUsser,stockT])
   
-
  return(
        
   <ItemCount  setStockUsser={setStockUsser} stockUsser={stockUsser} stockTotal={stockTotal} sumar={sumar} restar={restar} botonActivo={botonActivo} activo={activo} setActivo={setActivo} onAdd={onAdd} count={count}/> 
@@ -62,8 +64,8 @@ import ItemList from '../ItemList/ItemList';
 )
  }
 
-  
-    <ItemList productos={item} />
+ <ItemList productos={item} />
+ 
   
 
 
