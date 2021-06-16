@@ -5,9 +5,6 @@ import './Item.css'
 const Item = (prop) => {
     const { img, title, description, precio,} = prop
 
-
-
-      
       return (
         <div className="producto-info">
         <div className="artc-img-item">
