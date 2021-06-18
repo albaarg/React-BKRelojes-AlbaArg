@@ -9,12 +9,12 @@ const ItemCount = (prop) => {
     items < stock ? setItems(items+1) : alert('no hay mas stock')
     }
     const removeItems = () => {
-    items > stock ? setItems(items -1) : alert ('superaste la compra minima')
+    items < stock ? setItems(items -1) : alert ('superaste la compra minima')
     }
    return (
     
     
-        <div className="container counter mt-2 ">
+        <div className="container counter mt-5 ">
         <div className='d-flex justify-content-center align-items-baseline'>
         <i className="far fa-plus-square countbutton" onClick={removeItems}></i>
         <i className="far fa-minius-square countbutton"></i>

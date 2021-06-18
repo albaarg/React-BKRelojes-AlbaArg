@@ -38,7 +38,7 @@ getProducts
 
     return(
       <>
-     <ItemCount  initial={1} stock={20} onAdd={onAdd}/> 
+     <ItemCount  initial={0} stock={20} onAdd={onAdd}/> 
       
       <ItemList productos={item} />
       </>
