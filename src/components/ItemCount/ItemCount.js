@@ -1,52 +1,33 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './ItemCount.css'
 
 
 const ItemCount = (prop) => {
-
-    const {setStockUsser,stockUsser, stockTotal, botonActivo,activo,setAactivo, onAdd,count}= prop
-
-    const sumar = () => {
-        if ((stockTotal > 0)&& (stockUsser < stockTotal) ){
-            setStockUsser (stockUsser +1);
-            setAactivo (true);
-    
-        }
-    
+    const {initial, stock, onAdd} = prop
+    const [items, setItems] = useState(initial)
+    const addItems = () => {
+    items < stock ? setItems(items+1) : alert('no hay mas stock')
     }
-    const restar =() =>{
-        if (stockUsser ===0){
-        setAactivo(false);
-        setStockUsser(0);
-    
-        }
-        else if(stockUsser >=8 ){
-        setStockUsser (stockUsser -1);
-        }
+    const removeItems = () => {
+    items > stock ? setItems(items -1) : alert ('superaste la compra minima')
     }
+   return (
     
-
-
-    return (
-        
-            <div>
-                <p className="cantidad">cantidad en Stock: {stockTotal}</p>
-                <div className="btn stock" >
-                    <button onClick={restar} disabled={!botonActivo}>-</button>
-                    <p id="cantidad">{stockUsser}</p>
-                    <button onClick={sumar} disabled={!botonActivo}>+</button>
-                </div>
-                <button onClick={()=> onAdd(count)} disabled={!activo} className="btn shop" >Comprar</button>
-            </div>
-            
-    )
     
- 
-
+        <div className="container counter mt-2 ">
+        <div className='d-flex justify-content-center align-items-baseline'>
+        <i className="far fa-plus-square countbutton" onClick={removeItems}></i>
+        <i className="far fa-minius-square countbutton"></i>
+        <span className="counterAmount">{items}</span>
+        <i className="far fa-plus-square countbutton" onClick={addItems}></i>
+        </div>
+        <button className='btn shop' onClick={() => onAdd (items)}>
+         Comprar
+        </button>
+    </div>
     
+          ) 
+
 
 }
-
-
-
 export default ItemCount;

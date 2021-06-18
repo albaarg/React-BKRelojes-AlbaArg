@@ -7,7 +7,7 @@ class CartWidget extends Component{
                 <ul className="navbar-right">
                     <li>
                         <a id="cart">
-                            <i className="fa fa-shopping-cart"></i>Carrito <span className="conteo" id="cont1">0</span>
+                            <i className="fa fa-shopping-cart"></i><span className="conteo" id="cont1">0</span>
                         </a>
                     </li>
                 </ul>
