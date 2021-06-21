@@ -2,56 +2,71 @@ import React,{useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 
-const productos= [{ 
 
-}]
-
+const ItemListContainer = (prop) => {
+const productos= prop [{
   
-const ItemListContainer = () => {
-  const [item] = useState([])
   
-  const onAdd = () => {
-    console.log ('compra realizada')
-  }
+    nombre: 'Nombre de prueba',
+    descripción:' Descripción de prueba',
+    stock: 30
+  },
+  {
+    nombre: 'Nombre de prueba2',
+    descripción: ' Descripción de prueba',
+   
+    stock: 30
+  }];
+  
 
 
-  
- const getProducts = new Promise((resolve) => {
+ const task = new Promise((resolve) => {
+  console.log('Buscando productos...');
 
   setTimeout(() => {
     resolve(productos);
   }, 2000);
 });
 
-getProducts
+task
+  .then((result)=> {
+    if (result){
+      productos.forEach(product=>console.log(product))
+      
+    }else {
+      console.log("No hay productos")
 
-  .then(data => {
-    data.forEach(productos => {
-      console.log(productos);
-   
-    });
+    }
+    throw new Error('No hay productos');
   })
   .catch(e => {
-    console.log(e);
+    console.log(e.message);
   });
+   
+    const [item] = useState([productos])
+    const onAdd = () => {}
+     console.log ('compra realizada')
 
 
-    return(
+
+     return(
       <>
      <ItemCount  initial={0} stock={20} onAdd={onAdd}/> 
       
       <ItemList productos={item} />
       </>
       
-    )
+    );
+
+
+
+   
+
+  
+  }
+
     
-     
 
-  
-
-}
  
-  
-
 
 export default ItemListContainer;
