@@ -45,7 +45,7 @@ task
    
     const [item] = useState([productos])
     const onAdd = () => {}
-     console.log ('compra realizada')
+    
 
 
 

@@ -13,6 +13,7 @@ const ItemCount = (prop) => {
     items > stock &&
      setItems(items -1) 
     }
+    
    return (
     
     
