@@ -19,7 +19,7 @@ const ItemListContainer = () => {
    price: '$1500'
   } 
  ];
-
+ const [data, setData] = useState([]);
   const task=  new Promise((resolve) => {
       setTimeout(() => {
         resolve(productos);
@@ -28,7 +28,9 @@ const ItemListContainer = () => {
      });
    
  task
-  .then((data)=> {
+  .then((info)=> 
+    {setData(info) }).catch(e=> 
+      console.log(e));
     
       data.forEach(producto=>  {
         console.log (producto);
@@ -36,7 +38,7 @@ const ItemListContainer = () => {
       });
       
 
-    });
+    
     
   
 
