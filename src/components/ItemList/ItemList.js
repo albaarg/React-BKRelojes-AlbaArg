@@ -4,6 +4,7 @@ import Item from '../Item/Item';
 
 
 const ItemList = (prop) => {
+    console.log(prop)
     const {productos}=prop
 
     return (

@@ -1,5 +1,7 @@
 import React,{ useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
+import img1 from '../../assets/img/image1.png'
+import img2 from '../../assets/img/image2.png'
 
 const ItemListContainer = () => {
   
@@ -7,13 +9,14 @@ const ItemListContainer = () => {
 
  const productos = [
   
- { img:'img1',
+ {
+   img:img1,
    tittle: 'Reloj Clara',
    description: 'Modelo Unisex',
    price: '$2000'
 
   },{
-    img:'img2',
+    img:img2,
     tittle: 'Reloj Francia',
    description: 'Malla regulable',
    price: '$1500'
