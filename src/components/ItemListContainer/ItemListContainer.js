@@ -1,25 +1,25 @@
-import React,{ useState} from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+import React,{ useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = () => {
-  const onAdd = () => {}
-  const [item] = useState([]);
+  
+  const [data, setData] = useState([]);
 
  const productos = [
   
- {
-   tittle: 'Reloj Italia',
+ { img:'img1',
+   tittle: 'Reloj Clara',
    description: 'Modelo Unisex',
    price: '$2000'
 
   },{
-    tittle: 'Reloj Luna',
-   description: 'Luz, alarma y malla regulable',
+    img:'img2',
+    tittle: 'Reloj Francia',
+   description: 'Malla regulable',
    price: '$1500'
   } 
  ];
- const [data, setData] = useState([]);
+
   const task=  new Promise((resolve) => {
       setTimeout(() => {
         resolve(productos);
@@ -27,26 +27,19 @@ const ItemListContainer = () => {
 
      });
    
- task
-  .then((info)=> 
-    {setData(info) }).catch(e=> 
-      console.log(e));
-    
-      data.forEach(producto=>  {
-        console.log (producto);
-
-      });
-      
-
-    
-    
-  
+     useEffect (()=> {
+      task
+      .then((info)=> 
+        {setData(info) }).catch(e=> 
+          console.log(e));
+        
+     },[]);
 
   return(
       <>
-     <ItemCount  initial={0} stock={20} onAdd={onAdd}/> 
+     
       
-      <ItemList productos={item} />
+      <ItemList productos ={data} />
       </>
       
     );

@@ -10,7 +10,7 @@ const ItemCount = (prop) => {
     setItems(items +1)
     }
     const removeItems = () => {
-    items > stock &&
+    items > 1 &&
      setItems(items -1) 
     }
     

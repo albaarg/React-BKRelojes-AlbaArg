@@ -1,35 +1,41 @@
 import React from 'react';
 import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
+import img1 from '../../assets/img/image1.png'
+import img2 from '../../assets/img/image2.png'
+
 
 // Muestra todo el detalle de los productos
-const onAdd = () => {1}
 const Item = (prop) => {
-    const {img, title, description, precio} = prop
+    
+    const onAdd = () => {1}
+
+    const {img, tittle, description, price} = prop.element
     
      return (
-             
-            <div className="producto-info">
+         <>
+              <div className="producto-info">
             <div className="artc-img-item">
-                <img src={img} className="img-fluid" alt="producto"/>
+                <img src={img1} />
+                <img src= {img2}  />
             </div>
             <div className="item-info-producto">
                 <h4>
-                    <a href="/">{title}</a>
+                    <a href="/">{tittle}</a>
                 </h4>
                 <div>{description}</div>
                 <div className="producto_precio">
                     <div className="grid-precio">
-                        <span className="money">{precio}</span>
-                        <ItemCount initial={0} onAdd={onAdd}/>
+                        <span className="money">{price}</span>
+                        <ItemCount initial={1} stock={20} onAdd={onAdd}/>
                     </div>
                 </div>
-                
-            </div>
+                </div>
            
         </div>
-    
-
+            
+            
+        </>
 
       )
 

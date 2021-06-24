@@ -1,0 +1,45 @@
+.card{
+    width: 20rem;
+    padding: 10px;
+    margin: 12px;
+    border: 1px solid #1d2124;
+}
+.item-info-producto h4 a {
+    color: #080808;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+span.money {
+    font-size: 1em;
+    font-weight: 800;
+    color: #c29b47;
+    letter-spacing: 2px;
+}
+
+.producto_precio {
+    margin: 1em 0 0 0;
+    padding: 1em 0 0 0;
+    border-top: 1px solid #ddd;
+}
+
+.producto-info {
+    background: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 25px;
+}
+
+.item-info-producto {
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+
+.artc-img-item {
+    padding: 1em;
+}
+
+.img-fluid{
+    height: 200px;
+}
