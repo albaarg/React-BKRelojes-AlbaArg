@@ -1,5 +1,5 @@
 .card{
-    width: 20rem;
+    width: 10rem;
     padding: 10px;
     margin: 12px;
     border: 1px solid #1d2124;
@@ -9,7 +9,7 @@
     font-size: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 span.money {
@@ -41,5 +41,5 @@ span.money {
 }
 
 .img-fluid{
-    height: 200px;
+    height: 100px;
 }

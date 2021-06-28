@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import img3 from '../../assets/img/img3.png';
 
-const ItemDetailContainer =() =>{
+const ItemDetailContainer = () => {
 
-  const [setData] = useState([]);
+  const [data,setData] = useState([]);
 
   const detail = [
 
@@ -19,6 +19,7 @@ const ItemDetailContainer =() =>{
 
    }
   ];
+  
   const task=  new Promise((resolve) => {
       setTimeout(() => {
         resolve(detail);
@@ -35,18 +36,19 @@ const ItemDetailContainer =() =>{
      },[]);
 
      return (
-         <>
-    
-        {detail.map(element => {
-            return (
-                <ItemDetail key={element.key} element={element} />
-            )
+        <> 
 
-                
+         {data.map(element => {
+
+          return (
+            <ItemDetail key={element.key} element={element} />
+
           
+          )
 
 
-        })}
+      })}
+                
 
         </>
      )
