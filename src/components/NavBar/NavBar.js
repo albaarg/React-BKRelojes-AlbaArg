@@ -13,7 +13,7 @@ const NavBar = () => {
 
              <ul className='d-flex align-item-center' style={{listStyle:'none'}}>
 
-                <li className='m-2'>Home</li>
+                <li className='m-2'>Inicio</li>
                 <li className='m-2'>Catálogo</li>
                 <li className='m-2'>Contacto</li>
             </ul>

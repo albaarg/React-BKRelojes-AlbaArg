@@ -1,6 +1,7 @@
 import React from 'react';
 import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
+import {Link} from 'react-router-dom';
 
 
 const onAdd = () => {}
@@ -17,7 +18,7 @@ const Item = (prop) => {
             </div>
             <div className="item-info-producto">
                 <h4>
-                    <a href="/">{tittle}</a>
+                 <a href="/">{tittle}</a>
                 </h4>
                 <div>{description}</div>
                 <div className="producto_precio">
@@ -29,7 +30,7 @@ const Item = (prop) => {
                 </div>
            
         </div>
-            
+            <Link to='/productos/:id'>Ver detalle</Link>
             
         </>
 

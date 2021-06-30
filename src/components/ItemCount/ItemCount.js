@@ -17,14 +17,14 @@ const ItemCount = (prop) => {
    return (
     
     
-        <div className="container counter mt-5 ">
-        <div className='d-flex justify-content-center align-items-baseline'>
+        <div className="container counter mt-3 ">
+        <div className= 'd-flex justify-content-center align-items-baseline'>
         <i className="far fa-minus-square countbutton" onClick={removeItems}></i>
         <span className="counterAmount">{items}</span>
         <i className="far fa-plus-square countbutton" onClick={addItems}></i>
         </div>
         <button className='btn shop' onClick={() =>onAdd()}>
-         Comprar
+         Agregar al carrito
         </button>
     </div>
     
