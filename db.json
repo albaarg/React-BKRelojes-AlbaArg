@@ -10,12 +10,12 @@
        "category":"Modelo Mujer"
    
      },{
-       "id": "2"
-       "img":"https://github.com/albaarg/tienda/blob/main/imagenes/img2.png",
+       "id": "2",
+       "img": "https://github.com/albaarg/tienda/blob/main/imagenes/img2.png",
        "tittle": "Reloj Digital",
        "description": "Malla flexible",
        "colour":"Disponible en color blanco, negro, rosa y dorado",
-       "price": "3500",
+       "price": "$3500",
        "category":"Modelo Unisex"
    
      },{
@@ -32,7 +32,7 @@
        "tittle": "Reloj Luna",
        "description": "Con malla de cuero premium",
        "colour":"Disponible en color negro y camel",
-       "price": "$5000"
+       "price": "$5000",
        "category":"Modelo Unisex"
    },{
        "id":"5",
