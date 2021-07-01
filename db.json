@@ -1,46 +1,46 @@
 {
   "productos": [ 
   
-        id: '1',
-       img: 'img1',
-       tittle: 'Reloj Clara',
-       description: 'Malla metalizada y con luz',
-       colour:'Disponible en blanco, dorado y negro',
-       price: '$2000',
-       category:'Modelo Mujer'
+    {  "id": "1'"
+       "img": "img1",
+       "tittle": "Reloj Clara",
+       "description": "Malla metalizada y con luz",
+       "colour":"Disponible en blanco, dorado y negro",
+       "price": "$2000",
+       "category":"Modelo Mujer"
    
      },{
-       id: '2',
-       img:'img2',
-       tittle: 'Reloj Francia',
-       description: 'Malla flexible',
-       colour:'Disponible en color blanco, negro, rosa y dorado',
-       price: '$1500',
-       category:'Modelo Unisex'
+       "id": "2"
+       "img":"img2",
+       "tittle": "Reloj Francia",
+       "description": "Malla flexible",
+       "colour":"Disponible en color blanco, negro, rosa y dorado",
+       "price": "$1500",
+       "category":"Modelo Unisex"
    
      },{
-       id: '3',
-       img:'img3',
-       description: 'Con cronómetro y sumergible',
-       colour: 'Disponible en color blanco y negro',
-       price: '$3500',
-       category:'Modelo Unisex'
+       "id": "3",
+       "img":"img3",
+       "description": "Con cronómetro y sumergible",
+       "colour": "Disponible en color blanco y negro",
+       "price": "$3500",
+       "categor":"Modelo Unisex"
    },{
-       id: '4',
-       img:'img5',
-       tittle: 'Reloj Selah',
-       description: 'Con luz, alarma, cronómetro y malla regulable',
-       colour: 'Disponible en color dorado y rosa',
-       price: '$4000',
-       category:'Modelo Mujer'
+       "id": "4",
+       "img":'img5",
+       "tittle": "Reloj Selah",
+       "description": "Con luz, alarma, cronómetro y malla regulable",
+       "colour":"Disponible en color dorado y rosa",
+       "price": "$4000",
+       "category":"Modelo Mujer"
    },{
-       id:'5',
-       img:'img6',
-       tittle: 'Reloj Imantado',
-       description: 'Malla imantada y súper cómoda',
-       colour: 'Disponible en color blanco, negro y rojo',
-       price: '$3500',
-       category:'Modelo Hombre'
+       "id":"5",
+       "img":"img6",
+       "tittle": "Reloj Imantado",
+       "description": "Malla imantada y súper cómoda",
+       "colour": "Disponible en color blanco, negro y rojo",
+       "price": "$3500",
+       "category":"Modelo Hombre'
   
    }
   
