@@ -2,13 +2,14 @@ import React from 'react';
 import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
 import {Link} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
 
 const onAdd = () => {}
 // Muestra todo el detalle de los productos
 const Item = (prop) => {
     
-   const {img, tittle, description, price} = prop.element
+   const {id, img, tittle, description, category, price} = prop.element
     
      return (
          <>
@@ -21,16 +22,19 @@ const Item = (prop) => {
                  <a href="/">{tittle}</a>
                 </h4>
                 <div>{description}</div>
+                <Link to={`/productos/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>
+                <div className="producto_category"></div>
+                <div>{category}</div>
                 <div className="producto_precio">
                     <div className="grid-precio">
                         <span className="money">{price}</span>
-                        <ItemCount initial={1} stock={20} onAdd={onAdd}/>
+                      <ItemCount initial={1} stock={20} onAdd={onAdd}/>
                     </div>
                 </div>
                 </div>
            
         </div>
-            <Link to='/productos/:id'>Ver detalle</Link>
+            
             
         </>
 

@@ -8,20 +8,21 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 function App() {
+
   return (
-    <BrowserRouter>
-    <div className="App">
-      <header className="App-header" style={ {background: '#1211'} }>
-        <NavBar/>
-         </header>
+    
+       <div className="App bg-light">
+        <BrowserRouter>
+        <NavBar/>  
          <Switch>
          <Route exact path= '/productos/:id' ><ItemDetailContainer /> </Route> 
          <Route exact path= '/categorias/: category '> <ItemListContainer /> </Route>
          <Route exact path= '/'> <ItemListContainer /> </Route>       
          </Switch>
+         </BrowserRouter>
+  
     </div>
-    </BrowserRouter>
-  );
+    );
 }
 
 export default App;

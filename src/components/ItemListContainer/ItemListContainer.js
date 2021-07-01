@@ -2,7 +2,7 @@ import React,{ useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import img1 from '../../assets/img/img1.png';
 import img2 from '../../assets/img/img2.png';
-import img6 from '../../assets/img2/img6.png';
+import img6 from '../../assets/img/img6.png';
 
 const ItemListContainer = () => {
   
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
   img:img6,
   tittle: 'Reloj Imantado',
  description: 'Modelo unisex',
- price: '3500'
+ price: '$3500'
 
  }
 

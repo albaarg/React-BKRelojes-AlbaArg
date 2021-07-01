@@ -6,7 +6,6 @@
 
 .topnav a {
     float: right;
-    color #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -25,3 +24,21 @@
 }
 .imgLogo{
   width: 78px;
+}
+  .navbar-item{
+    margin-right: 2rem;
+    color: #46515C;
+    font-size: .8rem;
+}
+
+
+.navbar-item{
+    margin-right: 2rem;
+    color: #000000;
+    font-size: .8rem;
+}
+
+.navbar-item:hover{
+    color: rgb(0, 0, 0) ;
+
+}

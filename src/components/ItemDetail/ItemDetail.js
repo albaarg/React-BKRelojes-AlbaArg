@@ -13,7 +13,7 @@ return(
              </div>
              <div className="item-info-producto">
                 <h4>
-                    <a href="/">{tittle}</a>
+                  <a href="/">{tittle}</a>
                 </h4>
                 <div>{description}</div>
                 <div className="producto_precio">
@@ -28,8 +28,7 @@ return(
                     <ItemCount initial={1} stock={20} onAdd={onAdd}/> 
                     </div>
                 </div>
-                </div>
-           
+                </div>         
         </div>
     
 )
