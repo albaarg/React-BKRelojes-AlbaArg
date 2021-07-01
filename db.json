@@ -1,8 +1,8 @@
 {
   "productos": [ 
   
-id: '1',
-       img:img1,
+        id: '1',
+       img: 'img1',
        tittle: 'Reloj Clara',
        description: 'Malla metalizada y con luz',
        colour:'Disponible en blanco, dorado y negro',
@@ -11,7 +11,7 @@ id: '1',
    
      },{
        id: '2',
-       img:img2,
+       img:'img2',
        tittle: 'Reloj Francia',
        description: 'Malla flexible',
        colour:'Disponible en color blanco, negro, rosa y dorado',
@@ -20,14 +20,14 @@ id: '1',
    
      },{
        id: '3',
-       img:img3,
+       img:'img3',
        description: 'Con cronómetro y sumergible',
        colour: 'Disponible en color blanco y negro',
        price: '$3500',
        category:'Modelo Unisex'
    },{
        id: '4',
-       img:img5,
+       img:'img5',
        tittle: 'Reloj Selah',
        description: 'Con luz, alarma, cronómetro y malla regulable',
        colour: 'Disponible en color dorado y rosa',
@@ -35,7 +35,7 @@ id: '1',
        category:'Modelo Mujer'
    },{
        id:'5',
-       img:img6,
+       img:'img6',
        tittle: 'Reloj Imantado',
        description: 'Malla imantada y súper cómoda',
        colour: 'Disponible en color blanco, negro y rojo',
