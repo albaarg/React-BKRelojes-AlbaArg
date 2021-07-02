@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 const ItemDetailContainer = () => { 
   const [data,setData] = useState([]);
   const {id} = useParams ();
- 
+  
      useEffect (()=> {
       fetch(`https://my-json-server.typicode.com/albaarg/tienda/blob/main/db.json/${id}`)
       .then(response=> response.json()) 

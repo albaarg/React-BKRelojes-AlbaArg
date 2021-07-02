@@ -5,10 +5,11 @@ const ItemListContainer = () => {
   const [data, setData] = useState([])
    
      useEffect (()=> {
-       fetch('https://my-json-server.typicode.com/albaarg/tienda/db')
+       fetch('https://my-json-server.typicode.com/albaarg/tienda/productos')
        .then(response=> response.json()) 
-       .then((item) => {
-        setData(item.productos)
+       .then((productos) => {
+        setData(productos)
+
         }).catch(e=> {
           console.log(e);
          });  
