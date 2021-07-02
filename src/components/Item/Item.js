@@ -10,7 +10,6 @@ const onAdd = () => {}
 const Item = (prop) => {
     
    const {id, img, tittle, description, category, price} = prop.element
-    
      return (
          <>
               <div className="producto-info">
