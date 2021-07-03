@@ -3,8 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const onAdd= () => {}
 const ItemDetail = (prop) => {
-const {img, tittle, description, price, category, colour} = prop.element
-
+const {img, tittle, description, price, category, colour} = prop
 return(
     
        <div className="producto-info">
