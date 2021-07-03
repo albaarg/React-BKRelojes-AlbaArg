@@ -30,9 +30,7 @@ const ItemDetailContainer = () => {
               <h3>{data.price} </h3>
               <h3> {data.category} </h3>
               </div>
-            </div>            
-          
-          
+            </div>                  
           
           </>
         
