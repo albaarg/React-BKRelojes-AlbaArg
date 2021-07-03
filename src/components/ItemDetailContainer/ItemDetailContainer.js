@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
   const {id} = useParams ();
   
      useEffect (()=> {
-      fetch(`https://my-json-server.typicode.com/albaarg/tienda/blob/main/db.json/${id}`)
+      fetch(`https://my-json-server.typicode.com/albaarg/tienda/productos/${id}`)
       .then(response=> response.json()) 
       .then((info) => {
       setData(info)
