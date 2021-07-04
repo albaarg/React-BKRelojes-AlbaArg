@@ -1,7 +1,7 @@
 {
   "productos": [ 
   
-    {  "id": "1",
+    {  "id": "Mujer",
        "img": "https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img1.png",
        "tittle": "Reloj Clara",
        "description": "Malla metalizada y con luz",
@@ -10,7 +10,7 @@
        "category":"Modelo Mujer"
    
      },{
-       "id": "2",
+       "id": "Unisex",
        "img": "https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img2.png",
        "tittle": "Reloj Digital",
        "description": "Malla flexible",
@@ -19,7 +19,7 @@
        "category":"Modelo Unisex"
    
      },{
-       "id": "3",
+       "id": "Unisex",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img3.png",
        "tittle": "Reloj Francia",
        "description": "Con cronómetro y sumergible",
@@ -27,7 +27,7 @@
        "price": "$3700",
        "categor":"Modelo Unisex"
    },{
-       "id": "4",
+       "id": "Unisex",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img4.png",
        "tittle": "Reloj Luna",
        "description": "Con malla de cuero premium",
@@ -35,7 +35,7 @@
        "price": "$5000",
        "category":"Modelo Unisex"
    },{
-       "id":"5",
+       "id":"Mujer",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img5.png",
         "tittle": "Reloj Selah",
        "description": "Con luz, alarma, cronómetro y malla regulable",
@@ -43,7 +43,7 @@
        "price": "$4000",
        "category":"Modelo Mujer"
    },{
-       "id": "6",
+       "id": "Hombre",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img6.png",
        "tittle": "Reloj Imantado",
        "description": "Malla imantada y súper cómoda",
@@ -51,7 +51,7 @@
        "price": "$3500",
        "category":"Modelo Hombre"
    },{
-       "id": "7",
+       "id": "Unisex",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img7.png",
        "tittle": "Reloj Selah Deportivo",
        "description": "Con luz, alarma, cronómetro y malla regulable",
@@ -59,7 +59,7 @@
        "price": "$3000",
        "category":"Modelo Unisex"
    },{
-       "id": "8",
+       "id": "Unisex",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main//imagenes/img8.png",
        "tittle": "Reloj Margarita",
        "description": "Con luz, alarma, cronómetro y malla regulable",
