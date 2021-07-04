@@ -18,27 +18,17 @@ const ItemDetailContainer = () => {
 
 
      return (
+       <>
 
-        <> 
               
-            <ItemDetail/>
-            <div>
-            <div className='d-flex justify-content-center row' style={{marginBottom: '5rem'}}>
-              <h3>{data.tittle} </h3>
-              <h3>{data.description}</h3>
-              <h3>{data.colour}</h3>
-              <h3>{data.price} </h3>
-              <h3> {data.category} </h3>
-              </div>
-            </div>                  
-          
-          </>
+     <ItemDetail productos={data}/>    
+
+     </>             
+                 
         
      )
      
 }
-
-
 
 
 export default ItemDetailContainer;

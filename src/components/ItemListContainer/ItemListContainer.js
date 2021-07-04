@@ -1,8 +1,10 @@
 import React,{ useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
+import {useParams} from 'react-router-dom';
 
 const ItemListContainer = () => {
   const [data, setData] = useState([])
+  const {id} = useParams ();
    
      useEffect (()=> {
        fetch('https://my-json-server.typicode.com/albaarg/tienda/productos')
@@ -13,7 +15,7 @@ const ItemListContainer = () => {
         }).catch(e=> {
           console.log(e);
          });  
-     }, []);
+     }, [id]);
   
            return(
                   

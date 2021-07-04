@@ -19,9 +19,9 @@ const NavBar = () => {
                  <Button className="btn btn-light">Inicio</Button>
                  </NavLink>
                  <NavDropdown title="Catalogo"  classname="dropdown-menu ">
-                 <NavLink to={'/category/:hombre'} className="dropdown-item" component={NavDropdown.Item}>Hombre</NavLink>		
-                 <NavLink to={'/category/:mujer'} className="dropdown-item" component={NavDropdown.Item}>Mujer</NavLink>		
-                 <NavLink to={'/category/:unisex'} className="dropdown-item" component={NavDropdown.Item}>Unisex</NavLink>
+                 <NavLink to={'/categorias/:category/hombre'} className="dropdown-item" component={NavDropdown.Item}>Hombre</NavLink>		
+                 <NavLink to={'/categorias/:category/mujer'} className="dropdown-item" component={NavDropdown.Item}>Mujer</NavLink>		
+                 <NavLink to={'/categorias/:category/unisex'} className="dropdown-item" component={NavDropdown.Item}>Unisex</NavLink>
                  </NavDropdown>
                  <NavLink to={'/contacto'} className="container-contacto">
                  <Button className="btn btn-light">Contacto</Button>
