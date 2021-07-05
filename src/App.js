@@ -15,9 +15,8 @@ function App() {
         <BrowserRouter>
         <NavBar/>  
          <Switch>
-         <Route exact path= '/productos/:catálogo/:hombre' ><ItemDetailContainer /> </Route> 
-         <Route exact path= '/productos/:catálogo/:mujer' ><ItemDetailContainer /> </Route> 
-         <Route exact path= '/productos/:catálogo'> <ItemListContainer /> </Route>
+         <Route exact path= '/productos/catálogo/:id' ><ItemDetailContainer /> </Route> 
+         <Route exact path= '/productos/catálogo'> <ItemListContainer /> </Route>
          <Route exact path= '/'> <ItemListContainer /> </Route>       
          </Switch>
          </BrowserRouter>

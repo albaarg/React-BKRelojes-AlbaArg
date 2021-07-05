@@ -18,10 +18,11 @@ const ItemDetailContainer = () => {
 
 
      return (
+
        <>
 
               
-     <ItemDetail productos={data}/>    
+     <ItemDetail productos={data.tittle}/>    
 
      </>             
                  
