@@ -19,7 +19,7 @@ const NavBar = () => {
                  <Button className="btn btn-light">Inicio</Button>
                  </NavLink>
                  <NavDropdown title="Catalogo"  classname="dropdown-menu ">
-                 <NavLink to={'/productos/catálogo/: Hombre'} className="dropdown-item" component={NavDropdown.Item}>Hombre</NavLink>		
+                 <NavLink to={'/productos/catálogo/: id'} className="dropdown-item" component={NavDropdown.Item}>Hombre</NavLink>		
                  <NavLink to={'/productos/catálogo/:Mujer'} className="dropdown-item" component={NavDropdown.Item}>Mujer</NavLink>		
                  <NavLink to={'/productos/catálogo/:Unisex'} className="dropdown-item" component={NavDropdown.Item}>Unisex</NavLink>
                  </NavDropdown>
