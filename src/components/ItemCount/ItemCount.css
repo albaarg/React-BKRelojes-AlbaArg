@@ -1,13 +1,13 @@
 .btn.shop {
     margin-top: 10px;
-    background: #fac0c3;
+    background: #e0bb83;
     color: rgb(104, 68, 14);
     padding: 0.6em 2.5em;
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 2px;
     font-weight: 600;
-    box-shadow: 1px 3px 8px 0 rgba(233, 173, 84, 0.15);
+    box-shadow: 1px 3px 8px 0 rgba(161, 84, 233, 0.15);
     
 }
 .stock{
@@ -37,6 +37,3 @@
     
 }
 
-.cantidad{
-    color:grey;
-}

@@ -12,14 +12,15 @@ function App() {
   return (
     
        <div className="App bg-light">
-        <BrowserRouter>
-        <NavBar/>  
+         <BrowserRouter>
+         <NavBar/>  
          <Switch>
-         <Route exact path= '/productos/catálogo/:id' ><ItemDetailContainer /> </Route> 
-         <Route exact path= '/productos/catálogo'> <ItemListContainer /> </Route>
+         <Route path='/Item/:id'><ItemDetailContainer /></Route>
+         <Route exact path='/categoria/:categoryId'> <ItemListContainer/> </Route>
          <Route exact path= '/'> <ItemListContainer /> </Route>       
          </Switch>
          </BrowserRouter>
+
     </div>
     );
 }

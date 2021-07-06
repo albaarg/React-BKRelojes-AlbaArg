@@ -3,26 +3,32 @@ import ItemList from '../ItemList/ItemList';
 import {useParams} from 'react-router-dom';
 
 const ItemListContainer = () => {
-  const [data, setData] = useState([])
-  const {id} = useParams ();
-   
+  const [category,setCategory] = useState([]);
+  const {categoryId}=useParams();
+  console.log(categoryId);
+
      useEffect (()=> {
-       fetch('https://my-json-server.typicode.com/albaarg/tienda/productos')
+       fetch(`https://my-json-server.typicode.com/albaarg/tienda/productos/`)
        .then(response=> response.json()) 
        .then((productos) => {
-        setData(productos)
+        setCategory(productos)
 
         }).catch(e=> {
           console.log(e);
          });  
-     }, [id]);
+     }, []);
+
+     //const catalogo= productos.filter =()
   
            return(
-                  
-            <ItemList productos={data} />
-     )
+
+            <>
+                
+                  <ItemList productos={category} />
+                
+            </>
+        )
 
 }
   
-
 export default ItemListContainer;

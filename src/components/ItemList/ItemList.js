@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
+//import Link from 'react-router-dom';
 
 
 
@@ -10,10 +11,13 @@ const ItemList = (prop) => {
     return (
         <>
             {
-               todosLosProductos.map(produc => (
-                    <Item key={produc.id} element={produc} />
+               todosLosProductos.map(item=> (
+                    <Item key={item.id} element={item} />
+                    
                ))
+               
             }
+            
         </>
     )      
    

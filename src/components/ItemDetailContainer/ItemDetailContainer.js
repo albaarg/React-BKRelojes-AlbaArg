@@ -21,8 +21,14 @@ const ItemDetailContainer = () => {
 
        <>
 
-              
-     <ItemDetail productos={data.title}/>    
+        return (
+          <ItemDetail productos={data}/>   
+
+ 
+
+
+        )
+     
 
      </>             
                  
