@@ -18,7 +18,7 @@ const ItemListContainer = () => {
          });  
      }, []);
 
-     //const catalogo= productos.filter =()
+
   
            return(
 
