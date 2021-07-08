@@ -25,7 +25,7 @@
        "description": "Con cronómetro y sumergible",
        "colour": "Disponible en color blanco y negro",
        "price": "$3700",
-       "categor":"Modelo Unisex"
+       "category":"Modelo Unisex"
    },{
        "id": "4",
        "img":"https://raw.githubusercontent.com/albaarg/tienda/main/imagenes/img4.png",
