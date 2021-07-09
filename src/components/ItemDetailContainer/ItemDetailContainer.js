@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
-//import {Link} from 'react-router-dom';
-//import {Button} from 'react-bootstrap';
 
 const ItemDetailContainer = (prop) => { 
   const {products} = prop
