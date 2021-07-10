@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
 
-const [finish, setFinish]= useState(false)
-const onAdd= (items) => {
-  setFinish(true)
-}
 const ItemDetail = (prop) => {
 const {img, tittle, description, price, category, colour} = prop
+const [finish, setFinish]= useState(false)
+const onAdd= (items) => {
+  console.log(items)
+  setFinish(true)
+}
 return(
-    
       <div className="producto-info">
         <div className="artc-img-item">
           <img src={img} />
@@ -28,9 +28,9 @@ return(
         </div>
        <div className="producto_color" >
         <div> {colour}</div>
-         {finish ? <Button variant="btn btn-light">Finalizar Compra</Button> :
-         <ItemCount initial={1} stock={20} onAdd={onAdd}/>
-        }                                    
+         {finish ?<Button variant="secondary">Finalizar Compra</Button> :
+         <ItemCount initial={1} stock={20} onAdd={onAdd}/>                
+        }                                           
         </div>
        </div>
        </div>         
