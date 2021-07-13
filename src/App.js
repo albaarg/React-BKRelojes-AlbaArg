@@ -5,8 +5,9 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import getProducts from './components/api/getProducts';
+import Cart from './components/Cart/Cart';
 
-
+import CartProvider from './Context/CartProvider';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -15,19 +16,21 @@ function App() {
   }, [])
 
   return (  
-
-    
+  
     <div className="App bg-light">
+    <CartProvider>
   <BrowserRouter>
   <NavBar/>
     <Switch>
+      <Route path='./Cart'> <Cart/> </Route> 
       <Route path='/item/:itemId'><ItemDetailContainer products={products} /></Route>
       <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
       <Route exact path='/'><ItemListContainer products={products} /></Route>
     </Switch>
   </BrowserRouter>
+  </CartProvider>
   </div>
-    
+  
     
    
     );

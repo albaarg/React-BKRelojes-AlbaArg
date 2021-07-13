@@ -1,14 +1,28 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import CartContext from '../../Context/CartContext';
 
 const ItemDetail = (prop) => {
 const {img, tittle, description, price, category, colour} = prop
+const [cantidad,setCantidad] = useState(1)
 const [finish, setFinish]= useState(false)
-const onAdd= (items) => {
-  console.log(items)
+const [productLocal, setProductLocal]= useState()
+const contextCart = useContext(CartContext)
+
+const onSelectProduct= () => {
+  setProductLocal({...prop, quantity: 1})
+};
+
+const onAdd = color => () => {
+  console.log("color => ", color)
+  contextCart.addToCart(productLocal)
+  console.log(setCantidad)
+  setProductLocal()
   setFinish(true)
-}
+};
+
 return(
       <div className="producto-info">
         <div className="artc-img-item">
@@ -28,9 +42,23 @@ return(
         </div>
        <div className="producto_color" >
         <div> {colour}</div>
-         {finish ?<Button variant="secondary">Finalizar Compra</Button> :
-         <ItemCount initial={1} stock={20} onAdd={onAdd}/>                
-        }                                           
+        {
+          productLocal ? (
+            <div>
+              <div onClick={onAdd('color1')}>
+              <Button variant="outline-dark"> Blanco</Button>
+              </div>
+              <div onClick={onAdd('color2')}>
+              <Button variant="outline-dark"> Negro</Button>
+              </div>
+              <div onClick={onAdd('color3')}>
+              <Button variant="outline-dark"> Rosa</Button>
+              </div>
+            </div>
+          ) : 
+          finish ?<Link to={'/Cart'}> <Button variant="secondary">Finalizar Compra</Button></Link> :
+          <ItemCount initial={1}  addToCart={()=>{}} cantidad={cantidad} stock={20} onAdd={onSelectProduct}/>      
+        }
         </div>
        </div>
        </div>         
