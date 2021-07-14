@@ -2,9 +2,22 @@ import React, {useState, useEffect} from 'react';
 import CartContext from './CartContext';
 
 export default function CartProvider(prop) {
-    const {children }=prop
+    const {children}=prop
     const [Cart, setCart] = useState([])
+    const [cantidad,setCantidad] = ([])
     const [totalItems, setTotalItems]=useState(0);
+    
+    const tomoCantidad =(product,cantidad)=>{
+      const filtro = [...Cart];
+        filtro.forEach(i => {
+          if(i.id === product.id){
+            i.cantidad += cantidad
+            }  
+      })
+      setCart(filtro);
+    }
+  
+  
 
     useEffect(()=>{  
       let counter=0;
@@ -26,7 +39,7 @@ export default function CartProvider(prop) {
       return obj.id === undefined ? undefined : getFromCart(obj.id) !== undefined;
       
     }
-  
+ 
     function clear() {
       setCart([]);
     }
@@ -47,11 +60,14 @@ export default function CartProvider(prop) {
     }
   
     function addToCart(product) {
-      if (isInCart(product)) {
-        console.log('El producto ya está en el carrito');
-        return;
+      if(isInCart(product.id)){
+        tomoCantidad(product,cantidad)
+        console.log(setCantidad)
       }
-  
+      else{
+          setCart([...Cart, {...product, cantidad}]);
+          
+      }
       if (quantityInStock(product)){
          console.log('No hay suficiente stock del producto');
         return;   

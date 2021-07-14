@@ -3,6 +3,7 @@ import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {Card} from 'react-bootstrap';
 
 // Muestra todo el detalle de los productos
 const Item = (prop) => {
@@ -10,32 +11,23 @@ const Item = (prop) => {
 
      return (
       <>
-      <div className="producto-info">
-         <div className="artc-img-item">
-          <img src={img} />
-          </div>
-          <div className="item-info-producto">
-          <h4>
-          <a href="/">{tittle}</a>
-          </h4>
-         <div>{description}</div>
-         <Link to={`/item/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>
-          <div className="producto_category"></div>
-          <div>{category}</div>
-          <div className="producto_precio">
-            <div className="grid-precio">
-                <span className="money">{price}</span>
-              <ItemCount initial={1} stock={20} onAdd={prop.onAddCart}/>
-            </div>
-          </div>
-          </div>
-   
-</div>
-    
-    
-</>
+      <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
+        <Card style={{ width: '40rem' }}>
+          <Card.Img variant="top" src={img} />
+            <Card.Body>
+                <Card.Title>{tittle}</Card.Title>
+                 <Card.Text>{description}</Card.Text>
+                 <Link to={`/item/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>
+                 <Card.Text>{category}</Card.Text>
+                 <Card.Text>{price} </Card.Text>
+           </Card.Body>
+          </Card>
+         <ItemCount initial={1} stock={20} onAdd={prop.onAddCart}/>
+      </div>
 
- 
+    
+       </>
+
 
       )
 
