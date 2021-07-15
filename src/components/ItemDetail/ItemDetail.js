@@ -7,20 +7,15 @@ import CartContext from '../../Context/CartContext';
 const ItemDetail = (prop) => {
 const {img, tittle, description, price, category, colour} = prop
 const [cantidad,setCantidad] = useState(1)
-const [finish, setFinish]= useState(false)
-const [productLocal, setProductLocal]= useState()
+const [finish, setFinish]= useState(true)
+
 const contextCart = useContext(CartContext)
+console.log(contextCart)
 
-const onSelectProduct= () => {
-  setProductLocal({...prop, quantity: 1})
-};
-
-const onAdd = color => () => {
-  console.log("color => ", color)
-  contextCart.addToCart(productLocal)
+const onAdd = (items) => {
+  console.log(items)
   console.log(setCantidad)
-  setProductLocal()
-  setFinish(true)
+  setFinish(false)
 };
 
 return(
@@ -43,21 +38,8 @@ return(
       <div className="producto_color" >
       <div> {colour}</div>
        {
-      productLocal ? (
-      <div>
-         <div onClick={onAdd('color1')}>
-           <Button variant="outline-dark"> Blanco</Button>
-            </div>
-              <div onClick={onAdd('color2')}>
-             <Button variant="outline-dark"> Negro</Button>
-              </div>
-          <div onClick={onAdd('color3')}>
-         <Button variant="outline-dark"> Rosa</Button>
-       </div>
-      </div>
-      ) : 
-       finish ?<Link to={'/Cart'}> <Button variant="secondary">Finalizar Compra</Button></Link> :
-      <ItemCount initial={1}  addToCart={()=>{}} cantidad={cantidad} stock={20} onAdd={onSelectProduct}/>      
+       finish  ?<ItemCount initial={1}  addToCart={()=>{}} cantidad={cantidad} stock={20} onAdd={onAdd}/> :
+       <Link to={'/Cart'}> <Button variant="secondary">Finalizar Compra</Button></Link>     
      }
     </div>
   </div>
