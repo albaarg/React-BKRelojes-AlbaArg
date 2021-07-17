@@ -6,11 +6,11 @@ export default function CartProvider(prop) {
     const [Cart, setCart] = useState([])
     const [totalItems, setTotalItems]=useState(0);
     
-    const tomoCantidad =(product,cantidad)=>{
+    const tomoCantidad = product=>{
       const filtro = [...Cart];
         filtro.forEach(i => {
           if(i.id === product.id){
-            i.cantidad += cantidad
+            i.cantidad += product.cantidad
           }  
       })
       setCart(filtro);
@@ -41,13 +41,7 @@ export default function CartProvider(prop) {
     }
   
    function removeItem(id){
-     console.log(Cart);
-     console.log(id);
-     let index= Cart.map(elemento=>elemento.id).indexOf(id);
-   let updateCart= Cart.splice(index,1);
-   setCart([updateCart]);
-   
-     
+      setCart(prevState => prevState.filter(product => product.id !== id));
     } 
   
     function quantityInStock(obj){
@@ -63,9 +57,9 @@ export default function CartProvider(prop) {
      }
 
       if(isInCart(product.id)) {
-        tomoCantidad(product, 1)
+        tomoCantidad(product)
       } else {
-        setCart(prevState => ([...prevState, {...product, cantidad: 1}]));
+        setCart(prevState => ([...prevState, product]));
       }
   
       console.log('elemento agregado');
@@ -80,4 +74,3 @@ export default function CartProvider(prop) {
         </CartContext.Provider>
     )
 }
-

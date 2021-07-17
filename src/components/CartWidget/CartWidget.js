@@ -23,9 +23,7 @@ const CartWidget = () => {
                 <span className='main-color-text' id='total'>$0</span>
               </div>
             </div>
-      
             <ul className='shopping-cart-items' id='listaPro'>
-      
             </ul>
           </div>
         </>

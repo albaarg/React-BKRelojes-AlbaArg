@@ -8,8 +8,8 @@ const ItemListContainer = (prop) => {
     const {products} = prop
     const contextCart = useContext(CartContext)
   
-    const _handleAddCart = item => () => {
-      contextCart.addToCart(item)
+    const _handleAddCart = item => cantidad => {
+      contextCart.addToCart({...item, cantidad})
     }
 
     const { categoryId } = useParams();

@@ -9,8 +9,12 @@ import {Card} from 'react-bootstrap';
 const Item = (prop) => {
   const {id, img, tittle, description, category, price}= prop.element
 
-     return (
-      <>
+  const _handleAdd = cantidad => () => {
+    prop.onAddCart(cantidad)
+  }
+
+  return (
+    <>
       <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
         <Card style={{ width: '35rem' }}>
           <Card.Img variant="top" src={img}  />
@@ -22,14 +26,10 @@ const Item = (prop) => {
                  <Card.Text className="card-">{price} </Card.Text>
            </Card.Body>
           </Card>
-         <ItemCount initial={1} stock={20} onAdd={prop.onAddCart}/>
+         <ItemCount initial={1} stock={20} onAdd={_handleAdd}/>
       </div>
-
-    
-       </>
-
-
-      )
+      </>
+    )
 
 }
 

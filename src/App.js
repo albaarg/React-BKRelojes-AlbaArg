@@ -18,20 +18,20 @@ function App() {
 
   return (  
   
-    <div className="App bg-light">
-    <CartProvider>
+     <div className="App bg-light">
+     <CartProvider>
   <BrowserRouter>
   <NavBar/>
-    <Switch>
-      <Route path='./Cart'> <Cart/> </Route> 
-      <Route path='/item/:itemId'><ItemDetailContainer products={products} /></Route>
-      <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
-      <Route exact path='/'><ItemListContainer products={products} /></Route>
-    </Switch>
+   <Switch>
+       <Route path='/Cart'> <Cart/> </Route> 
+       <Route path='/item/:itemId'><ItemDetailContainer products={products} /></Route>
+       <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
+       <Route exact path='/'><ItemListContainer products={products} /></Route>
+  </Switch>
     <Footer/>
   </BrowserRouter>
   </CartProvider>
-  </div>
+    </div>
   
     
    
