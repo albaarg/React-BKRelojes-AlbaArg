@@ -12,14 +12,14 @@ const Item = (prop) => {
      return (
       <>
       <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
-        <Card style={{ width: '40rem' }}>
-          <Card.Img variant="top" src={img} />
+        <Card style={{ width: '35rem' }}>
+          <Card.Img variant="top" src={img}  />
             <Card.Body>
-                <Card.Title>{tittle}</Card.Title>
-                 <Card.Text>{description}</Card.Text>
+                <Card.Title className="card-tittle" >{tittle}</Card.Title>
+                 <Card.Text className="card-description">{description}</Card.Text>
                  <Link to={`/item/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>
-                 <Card.Text>{category}</Card.Text>
-                 <Card.Text>{price} </Card.Text>
+                 <Card.Text className="card-category">{category}</Card.Text>
+                 <Card.Text className="card-">{price} </Card.Text>
            </Card.Body>
           </Card>
          <ItemCount initial={1} stock={20} onAdd={prop.onAddCart}/>

@@ -5,9 +5,6 @@ import logo from '../../assets/img/b.r.png';
 import {NavLink} from 'react-router-dom';
 import {Button, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
-
-
-
 const NavBar = () => {
  return  (
     <div className='d-flex align-items-center justify-content-between p-2 bg-light'>
@@ -25,9 +22,6 @@ const NavBar = () => {
                         <NavLink exact to={'/categoria/Mujer'} className="dropdown-item" >Mujer</NavLink>		
                         <NavLink exact to={'/categoria/Unisex'} className="dropdown-item" >Unisex</NavLink>
                        </NavDropdown>
-                      <NavLink to={'/contacto'} className="container-contacto">
-                     <Button className="btn btn-light">Contacto</Button>
-                   </NavLink>
                  </Nav> 
                </Navbar>
              </ul>

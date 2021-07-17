@@ -4,7 +4,6 @@ import CartContext from './CartContext';
 export default function CartProvider(prop) {
     const {children}=prop
     const [Cart, setCart] = useState([])
-    const [cantidad,setCantidad] = ([])
     const [totalItems, setTotalItems]=useState(0);
     
     const tomoCantidad =(product,cantidad)=>{
@@ -12,13 +11,11 @@ export default function CartProvider(prop) {
         filtro.forEach(i => {
           if(i.id === product.id){
             i.cantidad += cantidad
-            }  
+          }  
       })
       setCart(filtro);
     }
   
-  
-
     useEffect(()=>{  
       let counter=0;
       if (Cart.length>0) { 
@@ -30,14 +27,13 @@ export default function CartProvider(prop) {
         setTotalItems(0)
       }
     },[Cart]) 
+
   function getFromCart(id) {
       return Cart.find(x => x.id === id);
     }
   
-    function isInCart(obj) {
-      console.log(obj);
-      return obj.id === undefined ? undefined : getFromCart(obj.id) !== undefined;
-      
+    function isInCart(productId) {
+      return Boolean(getFromCart(productId));
     }
  
     function clear() {
@@ -60,20 +56,18 @@ export default function CartProvider(prop) {
     }
   
     function addToCart(product) {
-      if(isInCart(product.id)){
-        tomoCantidad(product,cantidad)
-        console.log(setCantidad)
-      }
-      else{
-          setCart([...Cart, {...product, cantidad}]);
-          
-      }
+      
       if (quantityInStock(product)){
-         console.log('No hay suficiente stock del producto');
-        return;   
+        console.log('No hay suficiente stock del producto');
+       return;   
+     }
+
+      if(isInCart(product.id)) {
+        tomoCantidad(product, 1)
+      } else {
+        setCart(prevState => ([...prevState, {...product, cantidad: 1}]));
       }
   
-      setCart(prevState => ([...prevState, product]));
       console.log('elemento agregado');
     }
     
