@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
@@ -8,9 +8,11 @@ import {Card} from 'react-bootstrap';
 // Muestra todo el detalle de los productos
 const Item = (prop) => {
   const {id, img, tittle, description, category, price}= prop.element
+  const [finish, setFinish]= useState(true)
 
   const _handleAdd = cantidad => () => {
     prop.onAddCart(cantidad)
+    setFinish(false)
   }
 
   return (
@@ -26,7 +28,9 @@ const Item = (prop) => {
                  <Card.Text className="card-">{price} </Card.Text>
            </Card.Body>
           </Card>
-         <ItemCount initial={1} stock={20} onAdd={_handleAdd}/>
+          { finish ? <ItemCount initial={1} stock={20} onAdd={_handleAdd}/> :
+          <Link to={'/Cart'}> <div className='d-flex justify-content-center align-items-baseline'> <Button variant="secondary">Finalizar Compra</Button></div> </Link>
+          }
       </div>
       </>
     )

@@ -35,7 +35,7 @@ const ItemDetail = (prop) => {
         <div className="producto_color" >
         <div> {colour}</div>
         {
-        finish  ?<ItemCount initial={1}stock={20} onAdd={onAdd}/> :
+        finish  ? <ItemCount initial={1}stock={20} onAdd={onAdd}/> :
         <Link to={'/Cart'}> <Button variant="secondary">Finalizar Compra</Button></Link>     
       }
       </div>

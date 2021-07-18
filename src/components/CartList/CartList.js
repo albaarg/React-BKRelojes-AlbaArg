@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-//import CartContex from '../../Context/CartContext';
 import Table from 'react-bootstrap/Table';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
