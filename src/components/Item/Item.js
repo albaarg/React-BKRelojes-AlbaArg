@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React,{useState} from 'react';
 import './Item.css'
 import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
@@ -18,14 +18,14 @@ const Item = (prop) => {
   return (
     <>
       <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
-        <Card style={{ width: '35rem' }}>
+        <Card style={{ color: 'black',  width: '16rem', marginRight: '1.3rem', paddingTop: '.5rem' }}>
           <Card.Img variant="top" src={img}  />
             <Card.Body>
                 <Card.Title className="card-tittle" >{tittle}</Card.Title>
-                 <Card.Text className="card-description">{description}</Card.Text>
-                 <Link to={`/item/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>
-                 <Card.Text className="card-category">{category}</Card.Text>
+                 <Card.Text className="card-category">{description}</Card.Text>
+                 <Card.Text className="card-description">{category}</Card.Text>
                  <Card.Text className="card-">{price} </Card.Text>
+                 <Link to={`/item/${id}`}> <Button className="btn btn-light">Ver detalle</Button> </Link>            
            </Card.Body>
           </Card>
           { finish ? <ItemCount initial={1} stock={20} onAdd={_handleAdd}/> :

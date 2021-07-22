@@ -12,7 +12,7 @@ const CartWidget = () => {
           <ul className='navbar-right'>
             <li>
             <a id='cart'>
-            <Link exact to={`/cart`}><i className='fas fa-shopping-cart'></i><span className='conteo' id='cont1'>{totalItems}</span></Link>
+            <Link exact to={`/cart`} className="link"><i className='fas fa-shopping-cart'></i><span className='conteo' id='cont1'>{totalItems}</span></Link>
               </a>
             </li>
           </ul>

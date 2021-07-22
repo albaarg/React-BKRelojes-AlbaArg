@@ -1,8 +1,10 @@
-.card{
-    width: 10rem;
-    padding: 10px;
-    margin: 12px;
-    border: 1px solid #be96a4;
+.card:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 10px 5px 5px rgb(231, 193, 193);
 }
 .item-info-producto h4 a {
     color: #b8838e;
@@ -11,35 +13,20 @@
     text-transform: uppercase;
     font-weight: 500;
 }
-
 span.money {
     font-size: 1em;
     font-weight: 800;
     color: #c29b47;
     letter-spacing: 2px;
 }
-
-.producto_precio {
-    margin: 1em 0 0 0;
-    padding: 1em 0 0 0;
-    border-top: 1px solid #ddd;
-}
-
 .producto-info {
     background: #f7f7f7;
     padding: 1em;
     margin-bottom: 25px;
 }
 
-.item-info-producto {
-    padding: 1em 0 1em 0;
-    text-align: center;
-}
 
-.artc-img-item {
-    padding: 1em;
-}
 
-.img-fluid{
-    height: 100px;
-}
+
+
+

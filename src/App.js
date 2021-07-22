@@ -8,7 +8,7 @@ import getProducts from './components/api/getProducts';
 import Cart from './components/Cart/Cart';
 import {Footer} from './components/Footer/Footer';
 
-import CartProvider from './Context/CartProvider';
+import {CartProvider} from './Context/CartProvider';
 
 function App() {
   const [products, setProducts] = useState([]);

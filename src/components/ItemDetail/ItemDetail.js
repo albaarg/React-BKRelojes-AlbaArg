@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import CartContext from '../../Context/CartContext';
+import './ItemDetail.css'
 
 const ItemDetail = (prop) => {
   const {img, tittle, description, price, category, colour} = prop

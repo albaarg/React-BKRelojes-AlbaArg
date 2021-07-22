@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import CartContext from './CartContext';
 
-export default function CartProvider(prop) {
+export const CartProvider = (prop) => {
     const {children}=prop
     const [Cart, setCart] = useState([])
     const [totalItems, setTotalItems]=useState(0);
@@ -28,28 +28,28 @@ export default function CartProvider(prop) {
       }
     },[Cart]) 
 
-  function getFromCart(id) {
+  const getFromCart = (id) => {
       return Cart.find(x => x.id === id);
     }
   
-    function isInCart(productId) {
+    const isInCart = (productId) => {
       return Boolean(getFromCart(productId));
     }
  
-    function clear() {
+    const clear = () => {
       setCart([]);
     }
   
-   function removeItem(id){
+   const removeItem = (id) => {
       setCart(prevState => prevState.filter(product => product.id !== id));
     } 
   
-    function quantityInStock(obj){
+    const quantityInStock = (obj) => {
   
       return obj.stock > obj.quantity
     }
   
-    function addToCart(product) {
+    const addToCart = (product) => {
       
       if (quantityInStock(product)){
         console.log('No hay suficiente stock del producto');
