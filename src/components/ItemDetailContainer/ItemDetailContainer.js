@@ -3,6 +3,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+//import {getFirestore} from '../../firebase';
 
 const ItemDetailContainer = (prop) => { 
   const {products} = prop

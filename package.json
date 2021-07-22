@@ -49,17 +49,6 @@
     "eslint": "^7.27.0",
     "eslint-plugin-react": "^7.24.0",
     "prettier": "2.3.1"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": ".eslintrc.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/albaarg/React-BKRelojes-AlbaArg.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/albaarg/React-BKRelojes-AlbaArg/issues"
-  },
-  "homepage": "https://github.com/albaarg/React-BKRelojes-AlbaArg#readme"
+  }
+
 }

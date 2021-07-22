@@ -3,6 +3,7 @@ import Item from '../Item/Item';
 import {useParams} from 'react-router-dom';
 import CartContext  from '../../Context/CartContext'
 import Spinner from 'react-bootstrap/Spinner';
+//import {getFirestore} from '../../firebase';
 
 const ItemListContainer = (prop) => {
     const {products} = prop
