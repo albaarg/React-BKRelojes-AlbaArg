@@ -17,8 +17,9 @@ const Item = (prop) => {
 
   return (
     <>
-      <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
-        <Card style={{ color: 'black',  width: '16rem', marginRight: '1.3rem', paddingTop: '.5rem' }}>
+        <div className='d-flex justify-content-center row' style={{marginBottom: '10rem'}}>
+        <div className="col-md-4">
+        <Card>
           <Card.Img variant="top" src={img}  />
             <Card.Body>
                 <Card.Title className="card-tittle" >{tittle}</Card.Title>
@@ -31,7 +32,8 @@ const Item = (prop) => {
           { finish ? <ItemCount initial={1} stock={20} onAdd={_handleAdd}/> :
           <Link to={'/Cart'}> <div className='d-flex justify-content-center align-items-baseline'> <Button variant="secondary">Finalizar Compra</Button></div> </Link>
           }
-      </div>
+          </div>
+          </div>
       </>
     )
 

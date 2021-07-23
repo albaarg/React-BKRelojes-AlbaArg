@@ -7,7 +7,6 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import getProducts from './components/api/getProducts';
 import Cart from './components/Cart/Cart';
 import {Footer} from './components/Footer/Footer';
-
 import {CartProvider} from './Context/CartProvider';
 
 function App() {
