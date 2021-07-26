@@ -3,18 +3,26 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
-//import {getFirestore} from '../../firebase';
+import {getFirestore} from '../firebase/firebase';
 
 const ItemDetailContainer = (prop) => { 
   const {products} = prop
+  console.log(products)
   const { itemId } = useParams();
   const [item, setItem] = useState();
   useEffect(() => {
-      if(!item) {
-        const product = products.find(product => product.id == itemId) 
-        setItem(product)
-      }
-    }, [itemId, products])
+    const db = getFirestore()
+    const itemsCollection = db.collection('items')
+
+    itemsCollection.get()
+    .then((querySnapShot)=>{
+        const documentos = querySnapShot.docs.map((doc)=> {return { itemId: doc.itemId, ...doc.data() }})
+        const filtroId = itemId ? documentos.filter((item) => item.id === itemId) : documentos
+      setItem(filtroId[0])
+    })
+    .catch((err) => console.log('ERROR')) 
+    .finally(() => console.log('terminé detail'))       
+    },[itemId])
     
     return item ? (
       <div className='col-4 mx-5' >

@@ -1,10 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import CartContext from './CartContext';
+import 'notyf/notyf.min.css';
+import { getFirestore } from '../components/firebase/firebase';
 
 export const CartProvider = (prop) => {
     const {children}=prop
     const [Cart, setCart] = useState([])
     const [totalItems, setTotalItems]=useState(0);
+
+    const db = getFirestore()
+
+    useEffect(()=> {
+      localStorage.setItem('Cart', JSON.stringify(cart));
+    },[cart])
+
+    
+     const isInCart=(id)=>{
+        const existe = cart.some(i =>i.id === id);
+          return existe;
+        }
+
     
     const tomoCantidad = product=>{
       const filtro = [...Cart];
@@ -41,6 +56,11 @@ export const CartProvider = (prop) => {
     }
   
    const removeItem = (id) => {
+    const notyf = new Notyf()
+    notyf.error({
+        message: `${item.name} Eliminado`,
+        duration: 2000,
+    })
       setCart(prevState => prevState.filter(product => product.id !== id));
     } 
   
@@ -50,6 +70,13 @@ export const CartProvider = (prop) => {
     }
   
     const addToCart = (product) => {
+      const notyf = new Notyf()
+      notyf.success({
+          message: `<div style='color: white'> Agregaste: <br/> ${cantidad} ${item.name} ${item.category} al carrito </div> 
+                      <br> 
+                    <a href='/Cart' style='color: white'> Ver carrito </a> `,
+          duration: 2000,
+      })
       
       if (quantityInStock(product)){
         console.log('No hay suficiente stock del producto');
