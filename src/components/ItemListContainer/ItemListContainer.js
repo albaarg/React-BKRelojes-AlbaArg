@@ -7,18 +7,16 @@ import {getFirestore} from '../firebase/firebase'
 
 const ItemListContainer = (prop) => {
     const {products} = prop
+    const [item, setItem] =useState (false);
     console.log(products)
-    const contextCart = useContext(CartContext)
-  
+    const contextCart = useContext(CartContext);
+    const { categoryId } = useParams();
     const _handleAddCart = item => cantidad => {
       contextCart.addToCart({...item, cantidad})
     }
 
-    const { categoryId } = useParams();
-    const [list, setList] = useState(false);
- 
     useEffect(() => {
-      setList(true)
+      setItem(true)
       const db = getFirestore()
       const itemsCollection = db.collection('items')
 
@@ -26,21 +24,18 @@ const ItemListContainer = (prop) => {
       .then((querySnapShot)=>{
           const documentos = querySnapShot.docs.map((doc)=> {return { id: doc.id, ...doc.data() }})
           const filtrocategoryId = categoryId && documentos.filter((item) => item.categoryId == categoryId)
-          setList(filtrocategoryId)
+          setItem(filtrocategoryId)
       })
-
-      .finally(() => setList(false)) 
+      .catch( error=> console.log(error))
+      .finally(() => setItem(false)) 
       },[categoryId])
 
-
- 
       return (
         <div>
          {
-           list ?
-             list.map(item => (
-               <Item key={item.id} element={item} onAddCart={_handleAddCart(item)} />
-             )) : 
+           item ?
+               <Item key={item} element={item} onAddCart={_handleAddCart(item)} />
+            : 
              <div className='loader text-center' style={{marginTop: '20%', height:'100vh'}}> 
                <Spinner animation="border" variant="dark"/> 
            </div>

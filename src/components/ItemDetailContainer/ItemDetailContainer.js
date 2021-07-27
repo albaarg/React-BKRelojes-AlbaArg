@@ -10,17 +10,17 @@ const ItemDetailContainer = (prop) => {
   console.log(products)
   const { itemId } = useParams();
   const [item, setItem] = useState();
+  
   useEffect(() => {
     const db = getFirestore()
     const itemsCollection = db.collection('items')
-
-    itemsCollection.get()
+   itemsCollection.get()
     .then((querySnapShot)=>{
         const documentos = querySnapShot.docs.map((doc)=> {return { itemId: doc.itemId, ...doc.data() }})
         const filtroId = itemId ? documentos.filter((item) => item.id === itemId) : documentos
       setItem(filtroId[0])
     })
-    .catch((err) => console.log('ERROR')) 
+    .catch( error=> console.log(error))
     .finally(() => console.log('terminé detail'))       
     },[itemId])
     

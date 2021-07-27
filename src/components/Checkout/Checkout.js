@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
-import Checkout from '../../Components/Checkout/Checkout'
-import { useCartContext } from '../../Context/cartContext'
-import {getFirestore} from '../../firebase'
+import CheckoutList from './CheckoutList';
+import {getFirestore} from '../firebase/firebase';
 import firebase from 'firebase'
 
-export const Checkout = () => {
+export const Checkout = (prop) => {
 
-    const { cart, total, clearCart, precioTotal} = useCartContext()
+    const { cart, total, clearCart} = prop
+   
     const [validated, setValidated] = useState(false);
     const [user, setUser] = useState({nombre: '', apellido: '', mail: '', direccion:'', localidad:'', ciudad:'' })
     const [datosOrder, setDatosOrder] = useState({})
@@ -49,6 +49,7 @@ export const Checkout = () => {
            setOrderId(res.id)
 
        })
+       
        .catch((err)=>{ console.log('error: ' ,err)})
        .finally(()=>{
            clearCart()

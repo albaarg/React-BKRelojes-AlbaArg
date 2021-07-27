@@ -1,23 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Container from 'react-bootstrap/Container'
-import { useCartContext } from '../../Context/cartContext'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 
-
-const CheckoutList = ({datosOrder, handleSubmit, datosUser, handleCompra, orderId}) => {
-
-        const { cart, total, precioTotal} = useCartContext()
-        const [validated, setValidated] = useState(false);
-
-        precioTotal()
+const CheckoutList = (prop) => {
+const {datosOrder, handleSubmit, datosUser, handleCompra, orderId}=prop
+const { cart, total, precioTotal} = useContext()
+const [validated, setValidated] = useState(false);
+console.log(setValidated)
+precioTotal()
        
-       return (
-            <Container >
-               <div className='d-flex justify-content-around' > 
-               <Form noValidate validated={validated} className='formCheckout col-6' onSubmit={handleSubmit} style={{marginTop: '4rem', textAlign: 'left'}}>
+    return (
+        <Container >
+          <div className='d-flex justify-content-around' > 
+             <Form noValidate validated={validated} className='formCheckout col-6' onSubmit={handleSubmit} style={{marginTop: '4rem', textAlign: 'left'}}>
                     <div className='mt-2 mb-4 ultimoPaso'>Estás a un paso de finalizar tu compra!</div>
                     <div className='ingresoDatos mb-4'>Por favor ingresa tus datos y dirección de envío:</div>
                     <Form.Row>
@@ -111,7 +109,7 @@ const CheckoutList = ({datosOrder, handleSubmit, datosUser, handleCompra, orderI
                 Resumen de tu pedido:
                 <hr/>
                     {
-                    cart && cart.map((item) => <li className='liResumen' key=''> {item.nombre} - {item.varietal} x {item.cantidad} </li>)
+                    cart && cart.map((item) => <li className='liResumen' key=''> {item.name} - {item.category} x {item.cantidad} </li>)
                     }
                    <p className='subtotal'> Total: ${total} </p>
                 </div>

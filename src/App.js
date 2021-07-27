@@ -24,7 +24,7 @@ function App() {
   <NavBar/>
    <Switch>
        <Route path='/Cart'> <Cart/> </Route> 
-       <Route path="/checkout"><Checkout/></Route>
+       <Route path='/checkout'><Checkout/></Route>
        <Route path='/item/:itemId'><ItemDetailContainer products={products} /></Route>
        <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
        <Route exact path='/'><ItemListContainer products={products} /></Route>
