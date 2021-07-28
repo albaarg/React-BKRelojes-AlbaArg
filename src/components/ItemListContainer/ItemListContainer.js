@@ -5,10 +5,11 @@ import CartContext  from '../../Context/CartContext'
 import Spinner from 'react-bootstrap/Spinner';
 import {getFirestore} from '../firebase/firebase'
 
-const ItemListContainer = (prop) => {
+   const ItemListContainer = (prop) => {
     const {products} = prop
-    const [item, setItem] =useState (false);
     console.log(products)
+    const [productlist, setProductlist] = useState([]);
+    const [loading, setLoading] = useState (false); 
     const contextCart = useContext(CartContext);
     const { categoryId } = useParams();
     const _handleAddCart = item => cantidad => {
@@ -16,31 +17,50 @@ const ItemListContainer = (prop) => {
     }
 
     useEffect(() => {
-      setItem(true)
-      const db = getFirestore()
-      const itemsCollection = db.collection('items')
-
-      itemsCollection.get()
-      .then((querySnapShot)=>{
-          const documentos = querySnapShot.docs.map((doc)=> {return { id: doc.id, ...doc.data() }})
-          const filtrocategoryId = categoryId && documentos.filter((item) => item.categoryId == categoryId)
-          setItem(filtrocategoryId)
-      })
-      .catch( error=> console.log(error))
-      .finally(() => setItem(false)) 
-      },[categoryId])
+      const db = getFirestore();
+      const itemCollection = db.collection('items');
+       if (categoryId) {
+        const categoryItems = itemCollection.where("categoryId", "==", categoryId);
+        setLoading(true)
+        categoryItems.get().then((querySnapShot)=> {
+          if (querySnapShot.size === 0) {
+            console.log('No hay data!');
+       } else{
+        setProductlist(querySnapShot.docs.map(doc => {
+          return ({id: doc.id, ...doc.data()});  
+        })) 
+      }
+      }).catch(error => console.log(error)).finally(() => setLoading(false))
+    
+      }else {
+        setLoading (true)
+        itemCollection.where('stock', "!=",0).get().then((querySnapShot) => {
+          if (querySnapShot.lenght === 0) {
+            console.log('No hay datos')
+            setLoading (false)
+          } else {
+            setProductlist(querySnapShot.docs.map (doc => ({id: doc.id, ...doc.data () })))
+            setLoading (false)
+          }
+        }).catch(error => console.log (error))
+      }
+    },[categoryId])
 
       return (
+        <>
         <div>
-         {
-           item ?
-               <Item key={item} element={item} onAddCart={_handleAddCart(item)} />
-            : 
-             <div className='loader text-center' style={{marginTop: '20%', height:'100vh'}}> 
-               <Spinner animation="border" variant="dark"/> 
-           </div>
-         }
+         {       
+           loading ?  
+           <div className='loader text-center' style={{marginTop: '20%', height:'100vh'}}> 
+              <Spinner animation="border" variant="dark"/> </div>    
+                      :
+                      productlist.map(item => (
+                        <Item key={item} element={item} onAddCart={_handleAddCart(item)} />
+                      ))
+                                                       
+        }
        </div>
+       </>
      )
    }
 

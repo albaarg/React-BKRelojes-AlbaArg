@@ -14,15 +14,18 @@ const ItemDetailContainer = (prop) => {
   useEffect(() => {
     const db = getFirestore()
     const itemsCollection = db.collection('items')
-   itemsCollection.get()
-    .then((querySnapShot)=>{
-        const documentos = querySnapShot.docs.map((doc)=> {return { itemId: doc.itemId, ...doc.data() }})
-        const filtroId = itemId ? documentos.filter((item) => item.id === itemId) : documentos
-      setItem(filtroId[0])
+    itemsCollection.doc(itemId).get()
+    .then((doc) =>{
+      if(!doc.exists) {
+        console.log('El doc no existe')
+        return true;
+      }
     })
     .catch( error=> console.log(error))
-    .finally(() => console.log('terminé detail'))       
-    },[itemId])
+    .finally(() => {
+      setItem(true);
+    })
+  }, [itemId]);
     
     return item ? (
       <div className='col-4 mx-5' >
