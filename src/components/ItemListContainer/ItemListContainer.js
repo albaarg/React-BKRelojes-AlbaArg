@@ -18,11 +18,7 @@ const ItemListContainer = () => {
     const db = getFirestore();
     const itemCollection = db.collection("items");
     if (categoryId) {
-      const categoryItems = itemCollection.where(
-        "categoryId",
-        "==",
-        categoryId
-      );
+      const categoryItems = itemCollection.where("categoryId", "==", categoryId);
       setLoading(true);
       categoryItems
         .get()
@@ -59,15 +55,12 @@ const ItemListContainer = () => {
     <>
       <div>
         {loading ? (
-          <div
-            className="loader text-center"
-            style={{ marginTop: "20%", height: "100vh" }}
-          >
+          <div className="loader text-center" style={{ marginTop: "20%", height: "100vh" }}>
             <Spinner animation="border" variant="dark" />{" "}
           </div>
         ) : (
           productlist.map((item) => (
-            <Item key={item} element={item} onAddCart={_handleAddCart(item)} />
+            <Item key={item.id} element={item} onAddCart={_handleAddCart(item)} />
           ))
         )}
       </div>
