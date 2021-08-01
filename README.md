@@ -13,7 +13,7 @@ I've thought I'd make this e-commerce while I learn React.js</h3>
 
 
 <p align="center">
- <a href="https://linkedin.com/in/alba-isabel-a" target="_blank" rel="noopener noreferrer"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"></a>
+ <a href="https://linkedin.com/in/alba-isabel-a-07840413b/" target="_blank" rel="noopener noreferrer"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="Python" height="40" style="vertical-align:top; margin:4px"></a>
 </p>
 
 <br />
