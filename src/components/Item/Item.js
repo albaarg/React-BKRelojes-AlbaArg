@@ -19,14 +19,14 @@ const Item = (prop) => {
   return (
     <>
       <div
-        className="d-flex justify-content-center row"
-        style={{ marginBottom: "10rem" }}
+        className="d-flex justify-content-row"
+        style={{ marginBottom: "12rem" }}
       >
         <div className="col-md-4">
           <Card>
-            <Card.Img variant="top" src={imageId} />
+            <Card.Img src={imageId} />
             <Card.Body>
-              <Card.Title className="card-tittle">{tittle}</Card.Title>
+              <Card.Title className="card-tittle">{tittle.toUpperCase()}</Card.Title>
               <Card.Text className="card-description">{description}</Card.Text>
               <Card.Text className="card-category">{categoryId}</Card.Text>
               <Card.Text className="card-price">${price} </Card.Text>

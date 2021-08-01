@@ -1,33 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import CartContext from '../Context/CartContext';
+import {Notyf} from 'notyf'
+import 'notyf/notyf.min.css'
+
 
 export const CartProvider = (prop) => {
     const {children}=prop
     const [Cart, setCart] = useState([])
     const [totalItems, setTotalItems]=useState(0);
     
-    useEffect(()=> {
-      console.log(Cart);
-    let totalItems=0;
-    if (Cart.length>0){ 
-    for(let i=0; i<Cart.length; i++)
-    {totalItems=Cart[i].quantity + totalItems}
-    setTotalItems(totalItems);
-    }
-    else {setTotalItems(0)}
-    },[Cart]) 
-
-    const getFromCart=(id)=> {
-    return Cart.find(x => x.id === id);
-     }
-
-    const isInCart=(id)=>{
-        const existe = getFromCart(i =>i.id === id);
-          return existe;
-        }
-
-    
-    const tomoCantidad = product=>{
+  const tomoCantidad = product=>{
       const filtro = [...Cart];
         filtro.forEach(i => {
           if(i.id === product.id){
@@ -36,13 +18,38 @@ export const CartProvider = (prop) => {
       })
       setCart(filtro);
     }
-  
+
+    useEffect(()=> {
+      let counter=0;
+      if (Cart.length>0) { 
+        for(let i=0; i<Cart.length; i++) {
+          counter= (Cart[i].quantity || 1) + counter
+        }
+        setTotalItems(counter);
+      } else {
+        setTotalItems(0)
+      }
+    },[Cart]) 
+
+      const getFromCart=(id)=> {
+    return Cart.find(x => x.id === id);
+     }
+
+    const isInCart = (productId) => {
+      return Boolean(getFromCart(productId));
+    }
+
     const clear = () => {
       setCart([]);
     }
   
    const removeItem = (id) => {
    
+   const notyf = new Notyf()
+        notyf.error({
+            message: ` Eliminado`,
+            duration: 3000,
+        })
    
       setCart(prevState => prevState.filter(product => product.id !== id));
     } 
@@ -52,9 +59,18 @@ export const CartProvider = (prop) => {
       return obj.stock > obj.quantity
     }
   
-    const addToCart = (product) => {
-      
-      if (quantityInStock(product)){
+    const addToCart = (product) => {  
+         const notyf = new Notyf()
+        notyf.success({
+            message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div> 
+                        <br> 
+                      <a href='/Cart' style='color: white'> Ver carrito </a> `,
+            duration: 3000,
+        })
+
+
+
+ if (quantityInStock(product)){
         console.log('No hay suficiente stock del producto');
        return;   
      }

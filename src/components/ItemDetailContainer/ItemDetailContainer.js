@@ -9,6 +9,7 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState();
   const [loading, setLoading] = useState(true);
   const { itemId } = useParams();
+  
   const fetchData = async () => {
     const refItems = db.collection("items").doc(itemId);
     const getItems = await refItems.get();
@@ -18,7 +19,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     fetchData();
     setLoading(false);
-  }, []);
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!loading) {
     return (

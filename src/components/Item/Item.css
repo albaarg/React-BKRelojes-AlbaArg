@@ -1,28 +1,24 @@
+  .card-tittle{
+    font-size: 13px;
+}
+.card-categoryId{
+    font-size: 20px;
+}
+.card-price{
+margin-top: 0;
+}
+p{
+    text-decoration: none;
+    color: black;
+}
+
 .card:hover{
     transform: scale(1.05);
     -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
   transform: scale(1.05);
-  box-shadow: 10px 5px 5px rgb(231, 193, 193);
-}
-.item-info-producto h4 a {
-    color: #b8838e;
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-span.money {
-    font-size: 1em;
-    font-weight: 800;
-    color: #c29b47;
-    letter-spacing: 2px;
-}
-.producto-info {
-    background: #f7f7f7;
-    padding: 1em;
-    margin-bottom: 25px;
+  box-shadow: 8px 3px 3px rgb(231, 193, 193);
 }
 
 

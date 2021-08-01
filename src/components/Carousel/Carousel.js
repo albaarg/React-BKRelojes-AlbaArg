@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
-export const CarouselHome = () => {
+export const CarouselHomeList = () => {
     return (
         <Carousel style={{width: '50%', marginTop:'6rem'}} className='container' >
            <Carousel.Item>

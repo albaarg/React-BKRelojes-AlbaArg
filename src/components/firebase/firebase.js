@@ -15,5 +15,4 @@ const app = firebase.initializeApp(
 const db = app.firestore ()
 export {db}
 export const getFirebase = () => app
-
 export const getFirestore = () => firebase.firestore(app)

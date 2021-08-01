@@ -9,10 +9,10 @@ export const CartList = (prop) => {
 
   const total = useMemo(() => {
     return Cart.reduce((total, item) => {
-      console.log(item, "item");
-      return total + item.cantidad * Number(item.price.replace("$", ""));
-    }, 0);
-  }, [Cart]);
+      console.log(item, 'fdsjjf');
+      return total + item.cantidad * Number(item.price)
+    }, 0)
+  }, [Cart])
 
   return (
     <>
@@ -34,11 +34,11 @@ export const CartList = (prop) => {
               return (
                 <tr key={item.id}>
                   <td>{item.tittle}</td>
-                  <td>{item.category}</td>
+                  <td>{item.categoryId}</td>
                   <td>{item.price}</td>
                   <td>{item.cantidad}</td>
                   <td>
-                    ${item.cantidad * Number(item.price.replace("$", ""))}
+                    ${item.cantidad * Number(item.price)}
                   </td>
                   <td>
                     <DeleteOutlinedIcon onClick={() => removeItem(item.id)} />
@@ -52,7 +52,7 @@ export const CartList = (prop) => {
       <hr />
       <div className="total text-left">
         <p>Total: ${total} </p>
-        <Link to={"/checkout"}>
+        <Link to={"/Checkout"}>
           <Button variant="outline-info" style={{ marginRight: "1.5rem" }}>
             Finalizar Compra
           </Button>

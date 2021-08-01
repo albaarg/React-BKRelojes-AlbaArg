@@ -1,8 +1,25 @@
-  
-.detailImg{
-    width: 90%;
+  .item-info-producto h4 a {
+    color: #b8838e;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.detail-price {
+    font-size: 1em;
+    font-weight: 800;
+    color: #c29b47;
+    letter-spacing: 2px;
+}
+.detailCategoryId {
+    background: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 25px;
+}
+.detail-imageId{
+    width: 70%;
 }
 
-.detailNotas{
+.detailPrice{
     font-size: 14px;
 }

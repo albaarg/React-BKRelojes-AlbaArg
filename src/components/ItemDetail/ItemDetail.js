@@ -17,24 +17,15 @@ const ItemDetail = (prop) => {
   };
 
   return (
-    <div className="producto-info">
-      <div className="artc-img-item">
-        <img src={imageId} />
-      </div>
-      <div className="item-info-producto">
-        <h4>
-          <a href="/">{tittle}</a>
-        </h4>
-        <div>{description}</div>
-        <div className="producto_precio">
-          <div className="grid-precio">
-            <span className="money">{price}</span>
-          </div>
-          <div className="producto_categoria">
-            <div>{categoryId}</div>
-          </div>
-          <div className="producto_color">
-            <div> {colour}</div>
+   <div style={{marginTop: '5rem', marginBottom: '3rem'}}>
+            <div className='text-center'>
+                <h4 className='tittle'>{tittle}</h4>
+               <img src={imageId} alt="img-item" />
+                <h1 className='detailDescription'>{description}</h1>
+                <p className='detailCategory'>{categoryId}</p>
+                <p className='detailPrice'>${price}</p>
+                <hr/>
+                <p className='detailColour'>{colour}</p>
             {finish ? (
               <ItemCount initial={1} stock={20} onAdd={onAdd} />
             ) : (
@@ -44,8 +35,6 @@ const ItemDetail = (prop) => {
             )}
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

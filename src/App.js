@@ -8,7 +8,7 @@ import getProducts from './components/api/getProducts';
 import Cart from './components/Cart/Cart';
 import {Footer} from './components/Footer/Footer';
 import {CartProvider} from './Context/CartProvider';
-import {Checkout} from './components/Checkout/Checkout';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,10 +24,10 @@ function App() {
   <NavBar/>
    <Switch>
        <Route path='/Cart'> <Cart/> </Route> 
-       <Route path='/checkout'><Checkout/></Route>
        <Route path='/item/:itemId'><ItemDetailContainer products={products} /></Route>
        <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
        <Route exact path='/'><ItemListContainer products={products} /></Route>
+       <Route path='/Checkout'><Checkout/></Route>
   </Switch>
     <Footer/>
   </BrowserRouter>

@@ -3,19 +3,19 @@ import CartContext from "../../Context/CartContext";
 import "./CartWidget.css";
 import { Link } from "react-router-dom";
 
+
 const CartWidget = () => {
   const { totalItems } = useContext(CartContext);
   return (
     <>
       <ul className="navbar-right">
         <li>
-          <a id="cart"></a>
           <Link to={`/cart`} className="link">
             <i className="fas fa-shopping-cart"></i>
             <span className="conteo" id="cont1">
               {totalItems}
             </span>
-          </Link>
+          </Link>        
         </li>
       </ul>
       <div className="shopping-cart">

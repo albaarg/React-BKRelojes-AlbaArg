@@ -1,7 +1,7 @@
 .topnav {
     overflow: hidden;
     background-color: rgb(223, 173, 173);
-    height: 55px;
+    height: 70x;
 }
 
 .topnav a {
@@ -22,19 +22,9 @@
     background-color: white;
     color:oldlace
 }
-.imgLogo{
-  width: 78px;
-}
   .navbar-item{
     margin-right: 2rem;
     color: #46515C;
-    font-size: .8rem;
-}
-
-
-.navbar-item{
-    margin-right: 2rem;
-    color: #000000;
     font-size: .8rem;
 }
 
@@ -45,4 +35,9 @@
 .nav-dropdown{
     color: white;
  
+}
+.navar.logo a{
+    text-decoration:none;
+    text-transform: uppercase;
+    color: black;
 }
