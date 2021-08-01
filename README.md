@@ -25,6 +25,12 @@ I've thought I'd make this e-commerce while I learn React.js</h3>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependencies
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [Material UI Icons](https://material-ui.com/es/components/material-icons/)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [Notyf](https://carlosroso.com/notyf/)
+
 ## Available Scripts
 
 In the project directory, you can run:
