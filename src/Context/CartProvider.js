@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import CartContext from '../Context/CartContext';
 import {Notyf} from 'notyf'
 import 'notyf/notyf.min.css'
-import {Link} from 'react-router-dom';
 
 export const CartProvider = (prop) => {
      const { children } = prop;
@@ -48,7 +47,7 @@ export const CartProvider = (prop) => {
    const notyf = new Notyf()
         notyf.error({
             message: ` Eliminado`,
-            duration: 3000,
+            duration: 2000,
         })
    
       setCart(prevState => prevState.filter(product => product.id !== id));
@@ -59,13 +58,13 @@ export const CartProvider = (prop) => {
       return obj.stock > obj.quantity
     }
   
-    const addToCart = (product) => {  
-         const notyf = new Notyf()
+    const addToCart = (product) => { 
+       const notyf = new Notyf()
         notyf.success({
-            message: <div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div> 
+            message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div> 
                         <br> 
-                      <Link to={`/cart`}>Ver carrito</Link>,
-            duration: 3000,
+                      <a href='/Cart' style='color: white'> Ver carrito </a> `,
+            duration: 2000,
         })
 
 
