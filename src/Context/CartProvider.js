@@ -3,11 +3,10 @@ import CartContext from '../Context/CartContext';
 import {Notyf} from 'notyf'
 import 'notyf/notyf.min.css'
 
-
 export const CartProvider = (prop) => {
-    const {children}=prop
-    const [Cart, setCart] = useState([])
-    const [totalItems, setTotalItems]=useState(0);
+     const { children } = prop;
+     const [Cart, setCart] = useState([]);
+     const [totalItems, setTotalItems] = useState(0);
     
   const tomoCantidad = product=>{
       const filtro = [...Cart];
@@ -48,7 +47,7 @@ export const CartProvider = (prop) => {
    const notyf = new Notyf()
         notyf.error({
             message: ` Eliminado`,
-            duration: 3000,
+            duration: 2000,
         })
    
       setCart(prevState => prevState.filter(product => product.id !== id));
@@ -59,13 +58,11 @@ export const CartProvider = (prop) => {
       return obj.stock > obj.quantity
     }
   
-    const addToCart = (product) => {  
-         const notyf = new Notyf()
+    const addToCart = (product) => { 
+       const notyf = new Notyf()
         notyf.success({
-            message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div> 
-                        <br> 
-                      <a href='/Cart' style='color: white'> Ver carrito </a> `,
-            duration: 3000,
+            message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div>`,
+            duration: 2000,
         })
 
 
