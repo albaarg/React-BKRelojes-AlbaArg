@@ -56,7 +56,7 @@ const Checkout = () => {
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                />
+              />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridName">
@@ -82,11 +82,17 @@ const Checkout = () => {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>Ciudad</Form.Label>
-              <Form.Control value={city} onChange={(e) => setCity(e.target.value)} />
+              <Form.Control
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridZip">
               <Form.Label>Zip</Form.Label>
-              <Form.Control value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
+              <Form.Control
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
+              />
             </Form.Group>
           </Form.Row>
         </Form>
@@ -108,7 +114,9 @@ const Checkout = () => {
             );
           })
         )}
-
+        <div id={"checkOutTotal"}>
+          <h4>Total: {totalItems}</h4>
+        </div>
         <div>
           <button className="btn btn-primary" onClick={() => sendOrder()}>
             Realizar Compra
@@ -118,6 +126,5 @@ const Checkout = () => {
     </>
   );
 };
-            
 
 export default Checkout;
