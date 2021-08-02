@@ -61,9 +61,13 @@ export const CartProvider = (prop) => {
     const addToCart = (product) => { 
        const notyf = new Notyf()
         notyf.success({
+<<<<<<< HEAD
             message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div> 
                         <br> 
                       <a href='/Cart' style='color: white'> Ver carrito </a> `,
+=======
+            message: `<div style='color: white'> Agregaste: <br/> ${product.cantidad} ${product.tittle} ${product.categoryId} al carrito </div>`,
+>>>>>>> 4206aad5a811339ab25edc2b9a7a5d5f50fd0d9d
             duration: 2000,
         })
 

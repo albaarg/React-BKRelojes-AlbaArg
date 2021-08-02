@@ -35,10 +35,15 @@ export const CartList = (prop) => {
               return (
                 <tr key={item.id}>
                   <td>{item.tittle}</td>
-                  <td>{item.categoryId}</td>
+                  <td>{item.category}</td>
                   <td>{item.price}</td>
                   <td>{item.cantidad}</td>
+<<<<<<< HEAD
                   <td>${item.cantidad * Number(item.price)}</td>
+=======
+                  {/* <td>${item.cantidad * Number(item.price.replace("$", ""))}</td> */}
+                  <td>${item.cantidad * item.price}</td>
+>>>>>>> 4206aad5a811339ab25edc2b9a7a5d5f50fd0d9d
                   <td>
                     <DeleteOutlinedIcon onClick={() => removeItem(item.id)} />
                   </td>
