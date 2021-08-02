@@ -84,6 +84,47 @@ const Checkout = () => {
               <Form.Label>Ciudad</Form.Label>
               <Form.Control value={city} onChange={(e) => setCity(e.target.value)} />
             </Form.Group>
+<<<<<<< HEAD
+
+            <Form.Group as={Col} controlId="formGridZip">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control value={zipCode} onChange={(e) => setZipCode(e.target.value)} />
+            </Form.Group>
+          </Form.Row>
+        </Form>
+        <h3>Resumen de Compra</h3>
+        <hr />
+
+        {!products ? (
+          <div>
+            <p>Sin Productos cargados</p>
+          </div>
+        ) : (
+          products.map((item) => {
+            return (
+              <div key={item.id} className={"checkoutItem"}>
+                <h4>Producto ID: {item.id}</h4>
+                <h4>Producto{item.tittle}</h4>
+                <h4>Precio: ${item.price}</h4>
+              </div>
+            );
+          })
+        )}
+        <div id={"checkOutTotal"}>
+          <h4>Total: ${totalItems}</h4>
+        </div>
+
+        <div>
+          <button className="btn btn-primary" onClick={() => sendOrder()}>
+            Realizar Compra
+          </button>
+        </div>
+      </Container>
+    </>
+  );
+};
+=======
+>>>>>>> 44cec6b383354baafb2784a9529ecfead69ce1de
 
             <Form.Group as={Col} controlId="formGridZip">
               <Form.Label>Zip</Form.Label>

@@ -18,11 +18,7 @@ const ItemListContainer = () => {
     const db = getFirestore();
     const itemCollection = db.collection("items");
     if (categoryId) {
-      const categoryItems = itemCollection.where(
-        "categoryId",
-        "==",
-        categoryId
-      );
+      const categoryItems = itemCollection.where("categoryId", "==", categoryId);
       setLoading(true);
       categoryItems
         .get()
@@ -56,7 +52,11 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
+<<<<<<< HEAD
        <div className="container mb-5">
+=======
+    <div className="container mb-5">
+>>>>>>> 44cec6b383354baafb2784a9529ecfead69ce1de
       <div className="d-flex justify-content-between">
         {loading ? (
           <div className="loader text-center" style={{ marginTop: "20%", height: "100vh" }}>
