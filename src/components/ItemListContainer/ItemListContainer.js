@@ -56,22 +56,21 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <>
-      <div>
+       <div className="container mb-5">
+      <div className="d-flex justify-content-between">
         {loading ? (
-          <div
-            className="loader text-center"
-            style={{ marginTop: "20%", height: "100vh" }}
-          >
+          <div className="loader text-center" style={{ marginTop: "20%", height: "100vh" }}>
             <Spinner animation="border" variant="dark" />{" "}
           </div>
         ) : (
-          productlist.map((item) => (
-            <Item key={item} element={item} onAddCart={_handleAddCart(item)} />
-          ))
+          <div className="row">
+            {productlist.map((item) => (
+              <Item key={item.id} element={item} onAddCart={_handleAddCart(item)} />
+            ))}
+          </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

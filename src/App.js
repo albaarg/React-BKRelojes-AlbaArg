@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart';
 import {Footer} from './components/Footer/Footer';
 import {CartProvider} from './Context/CartProvider';
 import Checkout from './components/Checkout/Checkout';
+import {Carousel} from './components/Carousel/Carousel';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,10 @@ function App() {
        <Route path='/categoria/:categoryId'><ItemListContainer products={products} /></Route>
        <Route exact path='/'><ItemListContainer products={products} /></Route>
        <Route path='/Checkout'><Checkout/></Route>
+       <Route path="/">
+                  <Carousel/>
+                  <TodosContainer/>
+              </Route>
   </Switch>
     <Footer/>
   </BrowserRouter>

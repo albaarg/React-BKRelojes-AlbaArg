@@ -8,20 +8,13 @@ const ItemList = (prop) => {
    const todosLosProductos = prop.productos
     
     return (
-        <>
-            {
-               todosLosProductos.map(item=> (
-                    <Item key={item.id} element={item} />
-                    
-               ))
-               
-            }
-            
-        </>
-    )      
-   
-    
-}
+     <>
+      {todosLosProductos.map((item) => (
+        <Item key={item.id} element={item} />
+      ))}
+    </>
+  );
+};
 
 
 

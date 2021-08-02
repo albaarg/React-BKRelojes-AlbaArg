@@ -7,8 +7,7 @@ import { Card } from "react-bootstrap";
 
 // Muestra todo el detalle de los productos
 const Item = (prop) => {
-  const { id, imageId, tittle, description, categoryId, price, stock } =
-    prop.element;
+ const { id, imageId, tittle, description, categoryId, price, stock } = prop.element;
   const [finish, setFinish] = useState(true);
 
   const _handleAdd = (cantidad) => () => {
@@ -18,11 +17,7 @@ const Item = (prop) => {
 
   return (
     <>
-      <div
-        className="d-flex justify-content-row"
-        style={{ marginBottom: "12rem" }}
-      >
-        <div className="col-md-4">
+        <div className="col-md-6">
           <Card>
             <Card.Img src={imageId} />
             <Card.Body>
@@ -48,7 +43,6 @@ const Item = (prop) => {
               </div>{" "}
             </Link>
           )}
-        </div>
       </div>
     </>
   );
