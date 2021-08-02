@@ -108,9 +108,6 @@ const Checkout = () => {
             );
           })
         )}
-        <div id={"checkOutTotal"}>
-          <h4>Total: ${totalItems}</h4>
-        </div>
 
         <div>
           <button className="btn btn-primary" onClick={() => sendOrder()}>
