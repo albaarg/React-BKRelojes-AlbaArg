@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useCartContext } from "../../Context/CartContext";
 import { getFirestore } from "../firebase/firebase";
 import { Container, Form, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  //   const { products, getTotal } = useCartContext();
   const { Cart: products, totalItems } = useCartContext();
+  const [checked, setChecked] = useState(false);
   const [orderId, setOrderId] = useState();
 
   const [name, setName] = useState("");
@@ -33,6 +34,7 @@ const Checkout = () => {
       .add(newOrder)
       .then(({ id }) => {
         setOrderId(id);
+        setChecked(true);
       })
       .catch((err) => {
         console.log(err);
@@ -108,8 +110,8 @@ const Checkout = () => {
             return (
               <div key={item.id} className={"checkoutItem"}>
                 <h4>Producto ID: {item.id}</h4>
-                <h4>Producto{item.tittle}</h4>
-                <h4>Precio: ${item.price}</h4>
+                <h4>Producto: {item.tittle}</h4>
+                <h4>Precio: $ {item.price}</h4>
               </div>
             );
           })
@@ -122,6 +124,14 @@ const Checkout = () => {
             Realizar Compra
           </button>
         </div>
+        {checked && (
+          <div className="succesfull-bought">
+            <h3>¡Gracias por su compra!</h3>
+            <h4>ID de su compra: {orderId}</h4>
+            <br />
+            <Link to="/">Volver a la pagina principal</Link>
+          </div>
+        )}
       </Container>
     </>
   );

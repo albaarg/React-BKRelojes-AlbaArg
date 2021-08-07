@@ -35,9 +35,8 @@ export const CartList = (prop) => {
               return (
                 <tr key={item.id}>
                   <td>{item.tittle}</td>
-                  <td>{item.category}</td>
+                  <td>{item.categoryId}</td>
                   <td>{item.price}</td>
-                  <td>{item.cantidad}</td>
                   <td>${item.cantidad * Number(item.price)}</td>
                   {/* <td>${item.cantidad * Number(item.price.replace("$", ""))}</td> */}
                   <td>${item.cantidad * item.price}</td>
