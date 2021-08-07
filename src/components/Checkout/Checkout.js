@@ -129,7 +129,7 @@ const Checkout = () => {
             <h3>¡Gracias por su compra!</h3>
             <h4>ID de su compra: {orderId}</h4>
             <br />
-            <Link to="/">Volver a la pagina principal</Link>
+            <Link to="/">Volver a la página principal</Link>
           </div>
         )}
       </Container>
