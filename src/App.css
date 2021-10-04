@@ -1,70 +1,7 @@
-.navbar{
-  list-style: outside none none;
-
-}
-
-.navbar > li{
-  padding:0px 15px;
-  border-bottom: 2px solid #ca9989;
-}
-
-.navbar > li > a{
-  text-decoration:none;
-  color: #e76d47;
-  font-size:18pt;
-  text-transform:uppercase;
-  font-weight:bold;
-  font-family: 'Oswald', sans-serif;
-}
-
-.navbar > li > a:hover{
-  border-bottom: 5px solid #e29955;
-  color: #ebc682;
-}   
-
-.navbar > li > a.active{
-  border-bottom: 5px solid #f19a78;
-  color: #f5cfcf;
-}
 .navbar-right {
-float: right; 
-list-style: none;
+  float: right;
+  list-style: none;
 }
-conteo {
-background-color: #a07741;
-border-radius: 10px;
-color:white ;
-display: inline-block;
-font-size: 12px;
-line-height: 1;
-padding: 3px 7px;
-text-align: center;
-vertical-align: middle;
-white-space: nowrap;
-}
-.marca{
-  position: fixed;
-  margin: 0;
-  left: 72px;
-  top:-5px
-}
-.marca a span{
-font-weight: 700;
-color: #eca03c;
-font-size: 1.4em;
-padding-right: 10px
-}
-.marca a{
-display: inline-block;
-font-weight: 300;
-font-size: 30px;
-letter-spacing: 1px;
-color: rgb(121, 78, 78);
-text-shadow: 2px 5px 3px rgba(243, 216, 191, 0.06);
-padding: 0;
-text-decoration: none
-}
-
 .shopping-cart {
   margin: 20px 0;
   background: white;
@@ -77,38 +14,4 @@ text-decoration: none
   z-index: 10000;
   right: 11px;
   top: 90px;
-}
-.shopping-cart-header {
-border-bottom: 1px solid #e8e8e8;
-padding-bottom: 15px;
-}
-.shopping-cart-total {
-float: right;
-}
-.shopping-cart:after {
-bottom: 100%;
-left: 89%;
-border: solid transparent;
-content: " ";
-height: 0;
-width: 0;
-position: absolute;
-pointer-events: none;
-border-bottom-color: rgb(129, 48, 11);
-border-width: 8px;
-margin-left: -8px;
-}
-.shopping-cart-cantidad {
-max-width: 45px;
-border: 1px solid #ccc;
-border-radius: 5px;
-background: #eee;
-padding: 5px;
-}
-
-.cart-icon {
-color: #fc8d79;
-font-size: 24px;
-margin-right: 7px;
-float: left;
 }

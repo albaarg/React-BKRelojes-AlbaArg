@@ -1,28 +1,4 @@
-  .card-tittle{
-    font-size: 13px;
+.image-container {
 }
-.card-categoryId{
-    font-size: 20px;
+.card-container {
 }
-.card-price{
-margin-top: 0;
-}
-p{
-    text-decoration: none;
-    color: black;
-}
-
-.card:hover{
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  transform: scale(1.05);
-  box-shadow: 8px 3px 3px rgb(231, 193, 193);
-}
-
-
-
-
-
-

@@ -5,7 +5,8 @@ import { Container, Form, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  const { Cart: products, totalItems } = useCartContext();
+  const { Cart: products, totalItems, clearCart } = useCartContext();
+  const [empty, setEmpty] = useState(true);
   const [checked, setChecked] = useState(false);
   const [orderId, setOrderId] = useState();
 
@@ -18,7 +19,8 @@ const Checkout = () => {
   const sendOrder = () => {
     const db = getFirestore();
     const orders = db.collection("orders");
-    let PrecioTotal = totalItems;
+    let totalItems = 0;
+    totalItems.length === 0 ? setEmpty(true) : setEmpty(false);
 
     const newOrder = {
       buyer: name,
@@ -27,7 +29,7 @@ const Checkout = () => {
       ciudad: city,
       zip: zipCode,
       items: products,
-      total: PrecioTotal,
+      total: totalItems,
     };
 
     orders
@@ -41,7 +43,8 @@ const Checkout = () => {
       })
       .finally(() => {
         alert("Compra realizada con exito");
-        console.log(orderId);
+
+        clearCart();
       });
   };
 
@@ -97,6 +100,11 @@ const Checkout = () => {
               />
             </Form.Group>
           </Form.Row>
+          <div>
+            <button className="btn btn-primary" onClick={() => sendOrder()}>
+              Realizar Compra
+            </button>
+          </div>
         </Form>
         <h3>Resumen de Compra</h3>
         <hr />
@@ -119,17 +127,20 @@ const Checkout = () => {
         <div id={"checkOutTotal"}>
           <h4>Total: {totalItems}</h4>
         </div>
-        <div>
-          <button className="btn btn-primary" onClick={() => sendOrder()}>
-            Realizar Compra
-          </button>
-        </div>
-        {checked && (
-          <div className="succesfull-bought">
+
+        {checked && !empty && (
+          <div
+            className="resumenPedidoId text-left col-3"
+            style={{ marginTop: "7rem", height: "40%" }}
+          >
             <h3>¡Gracias por su compra!</h3>
-            <h4>ID de su compra: {orderId}</h4>
+            <h4>El id de la compra es: {orderId}</h4>
             <br />
-            <Link to="/">Volver a la página principal</Link>
+            <Link to="/">
+              <button variant="outline-info" className="mt-3">
+                Volver a la página principal
+              </button>
+            </Link>
           </div>
         )}
       </Container>

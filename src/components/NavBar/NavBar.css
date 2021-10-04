@@ -1,43 +1,18 @@
 .topnav {
-    overflow: hidden;
-    background-color: rgb(223, 173, 173);
-    height: 70x;
+  overflow: hidden;
+  background-color: rgb(223, 173, 173);
+  height: 70x;
 }
 
-.topnav a {
-    float: right;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-
+.navbar-item {
+  margin-right: 2rem;
+  color: #46515c;
+  font-size: 0.8rem;
 }
 
-.topnav a:hover {
-    background-color: white;
-    color: rgb(80, 39, 5);
+.navbar-item:hover {
+  color: rgb(0, 0, 0);
 }
-
-.topnav a.active {
-    background-color: white;
-    color:oldlace
-}
-  .navbar-item{
-    margin-right: 2rem;
-    color: #46515C;
-    font-size: .8rem;
-}
-
-.navbar-item:hover{
-    color: rgb(0, 0, 0) ;
-
-}
-.nav-dropdown{
-    color: white;
- 
-}
-.navar.logo a{
-    text-decoration:none;
-    text-transform: uppercase;
-    color: black;
+.nav-dropdown {
+  color: white;
 }

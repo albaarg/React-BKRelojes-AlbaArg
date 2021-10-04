@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
 import Spinner from "react-bootstrap/Spinner";
 import { getFirestore } from "../firebase/firebase";
+import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
   const [productlist, setProductlist] = useState([]);
@@ -18,7 +19,11 @@ const ItemListContainer = () => {
     const db = getFirestore();
     const itemCollection = db.collection("items");
     if (categoryId) {
-      const categoryItems = itemCollection.where("categoryId", "==", categoryId);
+      const categoryItems = itemCollection.where(
+        "categoryId",
+        "==",
+        categoryId
+      );
       setLoading(true);
       categoryItems
         .get()
@@ -51,22 +56,29 @@ const ItemListContainer = () => {
     }
   }, [categoryId]);
 
-  return ( 
- <div className="container mb-5">
+  return (
+    <div className="container mb-5">
       <div className="d-flex justify-content-between">
         {loading ? (
-          <div className="loader text-center" style={{ marginTop: "20%", height: "100vh" }}>
+          <div
+            className="loader text-center"
+            style={{ marginTop: "20%", height: "100vh" }}
+          >
             <Spinner animation="border" variant="dark" />{" "}
           </div>
         ) : (
-           <div className="row">
+          <div className="grid">
             {productlist.map((item) => (
-              <Item key={item.id} element={item} onAddCart={_handleAddCart(item)} />
+              <Item
+                key={item.id}
+                element={item}
+                onAddCart={_handleAddCart(item)}
+              />
             ))}
           </div>
         )}
       </div>
-      </div>
+    </div>
   );
 };
 export default ItemListContainer;

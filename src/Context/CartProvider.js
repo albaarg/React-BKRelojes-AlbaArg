@@ -38,7 +38,7 @@ export const CartProvider = (prop) => {
     return Boolean(getFromCart(productId));
   };
 
-  const clear = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
@@ -86,7 +86,7 @@ export const CartProvider = (prop) => {
         addToCart,
         isInCart,
         removeItem,
-        clear,
+        clearCart,
         totalItems,
         cartSize: Cart.length,
       }}
