@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import { Footer } from "./components/Footer/Footer";
 import { CartProvider } from "./Context/CartProvider";
 import Checkout from "./components/Checkout/Checkout";
+import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);

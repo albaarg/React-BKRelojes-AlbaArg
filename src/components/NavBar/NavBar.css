@@ -3,16 +3,3 @@
   background-color: rgb(223, 173, 173);
   height: 70x;
 }
-
-.navbar-item {
-  margin-right: 2rem;
-  color: #46515c;
-  font-size: 0.8rem;
-}
-
-.navbar-item:hover {
-  color: rgb(0, 0, 0);
-}
-.nav-dropdown {
-  color: white;
-}

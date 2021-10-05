@@ -11,17 +11,11 @@ const CartWidget = () => {
         <li>
           <Link to={`/cart`} className="link">
             <div className="cart ">
-              <i className="fas fa-shopping-cart"></i>
-              <span className="conteo" id="cont1">
-                {totalItems}
-              </span>
+              <i className="fas fa-shopping-cart m-4 p-3 "> {totalItems}</i>
             </div>
           </Link>
         </li>
       </ul>
-      <div className="shopping-cart">
-        <ul className="shopping-cart-items" id="listaPro"></ul>
-      </div>
     </>
   );
 };

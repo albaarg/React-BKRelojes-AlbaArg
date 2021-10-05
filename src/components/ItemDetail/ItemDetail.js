@@ -3,10 +3,10 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
-import "./ItemDetail.css";
 
 const ItemDetail = (prop) => {
-  const { imageId, tittle, description, price, categoryId, colour } = prop;
+  const { imageId, tittle, description, price, categoryId, colour, stock } =
+    prop;
   const [finish, setFinish] = useState(true);
 
   const contextCart = useContext(CartContext);
@@ -17,24 +17,39 @@ const ItemDetail = (prop) => {
   };
 
   return (
-   <div style={{marginTop: '5rem', marginBottom: '3rem'}}>
-            <div className='text-center'>
-                <h4 className='tittle'>{tittle}</h4>
-               <img src={imageId} alt="img-item" />
-                <h1 className='detailDescription'>{description}</h1>
-                <p className='detailCategory'>{categoryId}</p>
-                <p className='detailPrice'>${price}</p>
-                <hr/>
-                <p className='detailColour'>{colour}</p>
-            {finish ? (
-              <ItemCount initial={1} stock={20} onAdd={onAdd} />
-            ) : (
-              <Link to={"/Cart"}>
-                <Button variant="secondary">Finalizar Compra</Button>
-              </Link>
-            )}
-          </div>
-        </div>
+    <div>
+      <h4 class="p-3 m-4 ">{tittle}</h4>
+      <img
+        class=" object-center md:object-top ..."
+        src={imageId}
+        alt="img-item"
+      />
+      <div class="bg-indigo-100 md:bg-bg-indigo-200 rounded md:rounded-lg ... p-3 m-3">
+        <p class="text-purple-700 text-sm uppercase text-left md:text-center ...">
+          {description}
+        </p>
+        <p class="text-purple-700 text-sm uppercase text-left md:text-center ...">
+          {categoryId}
+        </p>
+        <p class="text-purple-700 text-sm uppercase text-left md:text-center ...">
+          ${price}
+        </p>
+        <p class="text-purple-700 text-sm uppercase text-left md:text-center ...">
+          {colour}
+        </p>
+        <p class="text-purple-700 text-sm uppercase text-left md:text-center ...">
+          {stock} En stock!{" "}
+        </p>
+      </div>
+
+      {finish ? (
+        <ItemCount initial={1} stock={20} onAdd={onAdd} />
+      ) : (
+        <Link to={"/Cart"}>
+          <Button variant="secondary">Finalizar Compra</Button>
+        </Link>
+      )}
+    </div>
   );
 };
 

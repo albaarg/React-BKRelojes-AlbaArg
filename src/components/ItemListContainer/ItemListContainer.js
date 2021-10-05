@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
 import Spinner from "react-bootstrap/Spinner";
 import { getFirestore } from "../firebase/firebase";
-import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
   const [productlist, setProductlist] = useState([]);
@@ -57,7 +56,7 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div className="container mb-5">
+    <div className="container mb-4">
       <div className="d-flex justify-content-between">
         {loading ? (
           <div
@@ -67,7 +66,7 @@ const ItemListContainer = () => {
             <Spinner animation="border" variant="dark" />{" "}
           </div>
         ) : (
-          <div className="grid">
+          <div className="row ">
             {productlist.map((item) => (
               <Item
                 key={item.id}
