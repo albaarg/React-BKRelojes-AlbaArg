@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+  bottom: 0;
   background-color: #dbdee1;
   display: flex;
   justify-content: space-evenly;
