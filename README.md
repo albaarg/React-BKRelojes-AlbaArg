@@ -1,7 +1,6 @@
 
 <h1 align="center">Hi 👋, I'm Alba</h1>
 
-![](https://firebasestorage.googleapis.com/v0/b/react-ecommerce-aa.appspot.com/o/BK%20Relojes%20-%20Google%20Chrome%202021-08-02%2003-49-55.gif?alt=media&token=19a7a386-da67-4d2e-97b4-a9bc12ec3755);
 
 https://react-bkr-elojes-alba-arg.vercel.app/
 
