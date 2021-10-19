@@ -31,7 +31,7 @@ const ItemCount = (prop) => {
         </div>
 
         <button
-          class="py-2 px-4 bg-purple-200 text-white font-semibold rounded-lg shadow-md hover:bg-purple-300 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75"
+          class="py-2 px-4 bg-purple-300 text-white font-semibold rounded-lg shadow-md hover:bg-purple-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75"
           onClick={onAdd(cantidad)}
         >
           Agregar al carrito

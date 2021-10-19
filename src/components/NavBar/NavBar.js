@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <div className="topnav">
       <div className="d-flex align-items-center justify-content-between py-5 bg-light">
-        <h1 className="m-6 animate-bounce w-10 h-10 ">
+        <h1 className="m-6 w-10 h-10 ">
           <strong>BK Relojes</strong>
         </h1>
         <nav className="w-full block flex-grow lg:flex lg:items-centers lg:w-auto text-center">
